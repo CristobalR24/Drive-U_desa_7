@@ -1,0 +1,118 @@
+@font-face{
+	font-family: "Signika-Bold";
+	src: url("../fuentes/Signika-Bold.ttf") format("truetype");
+  }
+@font-face{
+font-family: "Signika-Regular";
+src: url("../fuentes/Signika-Regular.ttf") format("truetype");
+}
+
+@font-face{
+	font-family: "Century-Gothic";
+	src: url("../fuentes/Century-Gothic.ttf") format("truetype");
+}
+
+body {
+    width:100%; 
+    background-image:linear-gradient(#FFFFFF,#d3c0d3);
+    margin:auto;
+}
+
+ /* ENCABEZADO */
+header {display:inline-block;
+        width:100%; 
+        height:130px;    
+        background-color:#FFFFFF;
+        }
+
+.logo{margin-left: 0.55rem;
+	  width: fit-content;
+	  font-family:"Century-Gothic";
+	  color:#4B2E83;
+	  margin-top:0.3rem;
+	  display: flex;
+	  align-items: center;
+	  justify-content:space-around;}
+
+.utp{font-size: large;
+	 margin-left: 0.5rem;}
+
+.titulo{position: absolute;
+	    font-family: "Signika-Bold";
+        font-size: 4.3rem;
+		top:2rem;
+		text-align: end;
+		right: 2rem;
+	    width: 100%;}
+  /*      
+header img{position:absolute;
+	       float: left;}
+*/
+
+/* BARRA DE NAVEGACION */
+
+ul{margin:0;
+   padding:0;}
+
+nav{font-family:"Signika-Regular";
+    font-size:15px;
+	list-style: none;
+	padding: 0;
+	overflow: hidden;
+	background: #4B2E83;
+	width: 100%;
+	margin: auto;
+}
+
+nav li a{
+	text-decoration: none;
+	color: white;
+	padding: 20px;
+	display: block;
+}
+
+nav li{
+	display: inline-block;
+	text-align: center;
+}
+
+
+
+.derecha{float: right;}
+
+.pequeno{font-size:18px;
+		 vertical-align: bottom;} /*importantisimo, coloca icono al lado de texto*/
+
+nav li a:hover{
+	background: #51034f;
+	color:white;
+	
+}
+
+/* Menu desplegable*/
+
+.submenu{display:none;
+         background-color:#4B2E83;}
+
+nav ul li:hover .submenu{display:block;
+						 position:absolute;				    
+                         z-index:1;  /* <- envia el elemento adelante */
+                         margin-top:0px;
+                         }
+
+
+/* ---------------- */
+
+ 
+/* ---------------- */
+
+footer {text-align:center;
+	font-family:"Signika-Regular";
+	font-size:16px;
+    width:100%;
+    height:100%; 
+    color:#FFFFFF;
+    background-color: #4B2E83;}
+
+
+
