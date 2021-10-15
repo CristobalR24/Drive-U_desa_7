@@ -45,22 +45,25 @@
                 }
 
 .tablap
-{border-collapse: collapse;
-    border:2px solid black;
+{border-collapse: separate;
+  border-spacing: 0;
+  border:2px solid black;
+  border-top:0;
   width: 100%;
   background-color: #D9D9D9;
   font-size:0.8rem;
 }
 
 .tablap tbody tr:hover
-{
-	 transition: 0.5s;
+{transition: 0.5s;
   background: linear-gradient(90deg, var(--c1, #99484C), var(--c2, #818399) 51%, var(--c1, #A386A3)) var(--x, 0)/ 200%;
 	--x: 250%;
 }
 
-.tablap thead{
+.tablap th{
+  top:0;
 padding-top: 0.5rem;
+border-top:2px solid black;
 padding-bottom: 0.5rem;
 text-align: center;
 background-color:  #B7A57A;
