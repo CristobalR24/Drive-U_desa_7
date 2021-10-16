@@ -27,7 +27,7 @@
       <li><a href="#">Administrador</a>
         <div class="submenu">
           <ul><a href="estado_vehiculos.php">Examinar disponibilidad de vehiculos</a></ul>
-          <ul><a href="#">Procesar solicitudes</a></ul>
+          <ul><a href="aceptar_solicitud.php">Procesar solicitudes</a></ul>
         </div>
       </li>
       
