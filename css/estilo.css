@@ -16,6 +16,7 @@ body {
     width:100%; 
     background-image:linear-gradient(#FFFFFF,#d3c0d3);
     margin:auto;
+    display: inline-block;
 }
 
  /* ENCABEZADO */
@@ -24,6 +25,12 @@ header {display:inline-block;
         height:130px;    
         background-color:#FFFFFF;
         }
+
+ h2 {
+ font-family: Arial;
+ position: relative;
+ left: 15px;
+    }
 
 .logo{margin-left: 0.55rem;
 	  width: fit-content;
