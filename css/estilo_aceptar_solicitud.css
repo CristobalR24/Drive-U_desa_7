@@ -1,0 +1,100 @@
+@font-face{
+    font-family: "Signika-Regular";
+    src: url("../fuentes/Signika-Regular.ttf") format("truetype");
+    }
+
+@font-face{
+    font-family: "Signika-Bold";
+    src: url("../fuentes/Signika-Bold.ttf") format("truetype");
+    }
+
+.gran_area{ display: flex;
+            width: 100%;
+            justify-content: center;
+            height: 35rem;
+            font-family: "Signika-Regular";}
+
+.hijo_1{display: flex;
+        gap:20px;
+        width: 70%;
+        justify-content: center;
+        align-items: center;
+        vertical-align:middle;
+        height: 100%;}
+
+.hijo_2{width: 40%;
+        height: 90%;
+        border-radius: 1%;
+        display: block;
+        padding-inline: 0.7rem;
+        border:2px solid #000000;
+        background-color: #D9D9D9;}
+
+.lista{
+     overflow:scroll;
+     height: 80%;
+     margin-bottom: 1rem;
+    overflow-x: hidden;}
+
+ul{list-style: none;}
+
+.titulo_l{font-family: "Signika-Bold";
+        padding-top: 1rem;
+        background-color: #D9D9D9;
+        width: 100%;
+        text-align: center;
+        display: block;
+        font-size: 1.5rem;
+}
+
+.solicitud_l{ background-color: #FFFFFF;
+              cursor: pointer;
+              padding: 0.5rem;
+              margin-bottom: 0.4rem;
+             text-align: center; 
+             border-spacing: 0;
+            border: 1px solid #000000;
+}
+
+.solicitud_l:hover{ background-color: #007b91;
+                    color:white;}
+
+.titulo_i{font-family: "Signika-Bold";
+    padding-top: 1rem;
+    background-color: #D9D9D9;
+    width: 100%;
+    text-align: center;
+    display: block;
+    font-size: 1.5rem;}
+
+.solicitud_i{background-color: #FFFFFF;
+            margin-top: 1rem;
+             width: 23rem;
+             margin-left: auto;
+             overflow: scroll;
+             overflow-x: hidden;
+             margin-right: auto;
+             height: 20rem;}
+
+.area_boton{width: 100%;
+            text-align: center;
+            }
+.boton{cursor: pointer;
+       padding: 0.5rem;
+       width: 6rem;
+       border:2px solid #000000;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    box-shadow: 0 0.4rem #999;
+}
+
+.aceptar{background-color: #63ff4f;}
+.rechazar{background-color: #da2626;}
+.boton.aceptar:hover{background-color: #18cc00;}
+.boton.aceptar:active{background-color: #63ff4f;;
+                      transform: translateY(4px);}
+.boton.rechazar:hover{background-color: #e91313;}
+.boton.rechazar:active{background-color: #da2626;;
+                    transform: translateY(4px);}
+
+
