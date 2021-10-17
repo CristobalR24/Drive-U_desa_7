@@ -5,12 +5,12 @@
   <title>Drive-U - Viajes realizados</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <meta name="viewport" content="width=device-width"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel="stylesheet" href="estilo/estilo_ViajesRealizados.css">
+<link rel="stylesheet" href="../css/estilo_ViajesRealizados.css">
 
 </head>
 <body>
   <header>
-    <div class="logo"><img src="imagenes/logo_utp.png" width="120px"></div> 
+    <div class="logo"><img src="../imagenes/logo_utp.png" width="120px"></div> 
     <span class="titulo">Drive-U</span></header>
     
     <nav>
