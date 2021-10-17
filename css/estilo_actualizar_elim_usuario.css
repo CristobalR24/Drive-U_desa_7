@@ -1,0 +1,48 @@
+
+
+table, th, td {
+    border:1px solid black;
+    padding: 2em;
+  }
+
+  #elim
+{
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-weight: bold;
+    background: rgb(146, 26, 26);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+#elim:hover
+{
+    background: rgb(158, 66, 66);
+}
+
+#act
+{
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-weight: bold;
+    background: rgb(4, 71, 26);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+#act:hover
+{
+    background: rgb(43, 138, 75);
+
+}
+
