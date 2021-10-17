@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Drive-U - Vehiculos</title>
+	<title>Drive-U - Inicio</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="../css/estilo.css" />
-  <link rel="stylesheet" type="text/css" href="../css/estilo_aceptar_solicitud.css" />
+	<link rel="stylesheet" type="text/css" href="../css/estilo_actualizar_elim_usuario.css" />
+
 </head>
 <body>
    <header>
@@ -13,7 +14,6 @@
     <span class="utp">Universidad Tecnológica de Panamá</span>
   </div> 
    <span class="titulo">Drive-U</span></header>
-   
    <nav>
     <ul>
 		  <li><a href="../index.php">Inicio</a></li>
@@ -44,37 +44,44 @@
 			<li class="derecha"><a href="login.php">Iniciar sesión <span class="material-icons pequeno">home</span> </a></li>	
   	</ul>
    </nav>
+   
+   <BR><BR>
+   <BR><BR>
+   <BR><BR>
+  <div id="center">
+    <table>
+        <thead>
+            <tr>
+                <th> Nombre </th>
+                <th> Cedula </th>
+                <th> Departamento</th>
+                <th>Accion</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr>
+                <td>Nombre apellido</td>
+                <td>x-xxx-xxxx</td>
+                <td class="center_depa">FISC</td>
+                <td>
+                    <button id="elim">Eliminar</button>
+                    <button id= "act">Actualizar</button>
 
-    <div class="gran_area">
-        <div class="hijo_1">
-            <div class="hijo_2">
-                <span class="titulo_l">Listado de solicitudes</span>
 
-                    <br>
-                    <div class="lista">
-                    <ul>
-                        <?php for ($i = 1; $i <= 20; $i++) {?>
-                        <li class="solicitud_l">Solicitud: 20-10-2021</li>
-                        <li class="solicitud_l">Solicitud: 03-11-2021</li>	
-                        <?php } ?>
-                    </ul>
-                    </div>
+                </td>
 
-            </div>
-            <div class="hijo_2">
-              <span class="titulo_l"> Solicitud: </span>
-              <div class="solicitud_i">x</div>
-                <br><br>    
-                <div class="area_boton">
-                  <button class="boton rechazar">Rechazar</button><button class="boton aceptar">Aceptar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-  
-
- 
-  <br><br><br>
+            </tr>
+        </tbody>
+    </table>
+</div>
+   <br>
+   <br>
+   <br>
+   		
+   <BR><BR><BR><BR><BR><BR>		
+   <BR><BR><BR><BR><BR><BR>		
+   <BR><BR><BR>
    <footer>
      <br>
 	 ©2021. Drive-U.

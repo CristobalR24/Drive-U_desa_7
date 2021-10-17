@@ -14,22 +14,35 @@
     <span class="titulo">Drive-U</span></header>
     
     <nav>
-     <ul>
-       <li><a href="#">Inicio</a></li>
-       <li><a href="#">Nosotros</a></li>
-       <li><a href="#">Trámites</a>
-         <div class="submenu">
-           <ul><a href="#">Viajes realizados</a></ul>
-           <ul><a href="#">Viajes pendientes</a></ul>
-           <ul><a href="#">Informe de viajes</a></ul>
-         </div>
-       </li>
-       
-       <li><a href="#">Preguntas frecuentes</a></li>
-       <li><a href="#">Contáctenos</a></li>
-       <li class="derecha"><a href="#">Cerrar sesión <span class="material-icons pequeno">home</span> </a></li>	
-     </ul>
-    </nav>
+    <ul>
+		  <li><a href="../index.php">Inicio</a></li>
+      <li><a href="preguntas_frecuentes.php">Preguntas frecuentes</a></li>
+			<li><a href="#">Servicios</a>
+        <div class="submenu">
+          <ul><a href="crear_solicitud.php">Crear solicitud</a></ul>
+          <ul><a href="estado_solicitud.php">Estado de solicitud</a></ul>
+        </div>
+      </li>
+
+      <li><a href="#">Opciones de administrador</a>
+        <div class="submenu">
+          <ul><a href="crear_usuario.php">Registrar usuario</a></ul>
+          <ul><a href="actualizar_elim_usuario.php">Modificar usuarios</a></ul>
+          <ul><a href="estado_vehiculos.php">Lista de vehiculos</a></ul>
+          <ul><a href="aceptar_solicitud.php">Procesar solicitudes</a></ul>
+        </div>
+      </li>
+
+      <li><a href="#">Opciones de conductor</a>
+        <div class="submenu">
+          <ul><a href="viajespendientes.php">Viajes pendientes</a></ul>
+          <ul><a href="viajesRealizados.php">Viajes realizados</a></ul>
+        </div>
+      </li>
+      <!-- tambien sera opcion de salir --> 
+			<li class="derecha"><a href="login.php">Iniciar sesión <span class="material-icons pequeno">home</span> </a></li>	
+  	</ul>
+   </nav>
     <BR><BR>
 <!-- partial:index.partial.html -->
 <div class="posicion">

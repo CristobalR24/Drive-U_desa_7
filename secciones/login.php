@@ -16,7 +16,7 @@
    
    <nav>
     <ul>
-        <li><a href="#">Inicio</a></li>
+        <li><a href="../index.php">Inicio</a></li>
    </ul>
    </nav>
 
@@ -33,8 +33,6 @@
          <BR>
          Contraseña: <input type="password" name=password required>
 
-         <BR>
-         <a href="">¿No tienes Cuenta? Registrate</a>
          <BR><BR>
          <button class="envio" type="submit">Acceder</button>
          <BR><BR>
