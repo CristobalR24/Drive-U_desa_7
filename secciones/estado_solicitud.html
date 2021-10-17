@@ -4,12 +4,12 @@
 	<meta charset="UTF-8">
 	<title>Drive-U -Estado de Solicitud</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
-  <link rel="stylesheet" type="text/css" href="css/estilo_estadosoli.css" />
+	<link rel="stylesheet" type="text/css" href="../css/estilo.css" />
+  <link rel="stylesheet" type="text/css" href="../css/estilo_estadosoli.css" />
 </head>
 <body>
    <header>
-   <div class="logo"><img src="imagenes/logo_utp.png" width="120px">
+   <div class="logo"><img src="../imagenes/logo_utp.png" width="120px">
     <span class="utp">Universidad Tecnológica de Panamá</span>
   </div> 
    <span class="titulo">Drive-U</span></header>
@@ -42,12 +42,17 @@
           <input type="text" name="estado" required>
           <br>
           <br>
-    <div class="btn1">
-       <input class="enviar" type="submit" value="Enviar Solicitud" >
-     </div>
-     <br>
-     <div class="btn2">
-       <input  class ="cancelar" type="reset" name="Cancelar" value="Cancelar">
+
+
+     
+          <div class="btn1">
+            <input class="enviar" type="submit" value="Enviar Solicitud" >
+          </div>
+          <br>
+          <div class="btn2">
+            <input  class ="cancelar" type="reset" name="Cancelar" value="Cancelar">
+          </div>
+
       </fieldset>
      </form>
 
@@ -58,11 +63,13 @@
     <form action="estado_solicitud.html" method="POST">
       <fieldset>
         <div class="entradas">
-    <div class="soli">
-       <input class="enviar" type="submit" value="Si" >
-     </div>
-     <div class="soli2">
-       <input  class ="cancelar" type="reset" name="Cancelar2" value="No">
+          <div class="soli">
+            <input class="enviar" type="submit" value="Si" >
+          </div>
+          <div class="soli">
+          <input  class ="cancelar" type="reset" name="Cancelar2" value="No">
+          </div>
+        </div>
       </fieldset>
      </form>
 

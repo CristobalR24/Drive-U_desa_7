@@ -36,24 +36,26 @@ height:150px;
 
 
 .entradas input[type=text]{
-    height:17px;
-             font-family:"Signika-Regular";
-              font-style: italic;
-              text-align: center;
+                height:17px;
+                font-family:"Signika-Regular";
+                font-style: italic;
+                text-align: center;
                 font-size: 16px;
-                 border-radius:15px;}
+                border-radius:15px;}
 
 
 .entradas{
-	text-align: center;
+	  text-align: center;
     display:inline-block;
+    width: 100%;
     font-size:20px;
-    font-family:"Signika-Regular"
-    color :black;
+    font-family:"Signika-Regular";
+    color: black;
 }
 
 
 .enviar{
+ width: 10rem;
  background-color:#709e07;
  color:#FFFFFF;
  text-align: center;
@@ -64,6 +66,7 @@ height:150px;
 
 
 .cancelar{
+  width: 10rem;
     background-color:#b9181f;
     color:#FFFFFF;
     font-size:18px;
@@ -72,9 +75,7 @@ height:150px;
 }
 
 .soli{
-  margin: 1rem;
+  margin: 0.5rem;
   padding: 1rem;
 }
-.soli2{
- 
-}
+
