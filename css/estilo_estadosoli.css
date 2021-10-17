@@ -1,0 +1,80 @@
+
+form {
+    display : flex;
+    justify-content: center;
+    padding-top:25px;
+}
+@font-face{
+	font-family: "Signika-Bold";
+	src: url("../fuentes/Signika-Bold.ttf") format("truetype");
+  }
+@font-face{
+font-family: "Signika-Regular";
+src: url("../fuentes/Signika-Regular.ttf") format("truetype");
+}
+
+@font-face{
+	font-family: "Century-Gothic";
+	src: url("../fuentes/Century-Gothic.ttf") format("truetype");
+}
+
+h1{
+	text-align:center;
+	font-family: "Signika-Bold";
+
+}
+
+
+form fieldset{
+font-family: "Signika-Regular";
+font-size: 18px;
+background-color:#d3c0d3;
+border-radius:20px;
+width:400px;
+height:150px;
+}
+
+
+.entradas input[type=text]{
+    height:17px;
+             font-family:"Signika-Regular";
+              font-style: italic;
+              text-align: center;
+                font-size: 16px;
+                 border-radius:15px;}
+
+
+.entradas{
+	text-align: center;
+    display:inline-block;
+    font-size:20px;
+    font-family:"Signika-Regular"
+    color :black;
+}
+
+
+.enviar{
+ background-color:#709e07;
+ color:#FFFFFF;
+ text-align: center;
+ font-size:18px;
+ border-radius:20px;
+ font-family:Century-Gothic;
+}
+
+
+.cancelar{
+    background-color:#b9181f;
+    color:#FFFFFF;
+    font-size:18px;
+    border-radius:20px;
+    font-family:Century-Gothic;
+}
+
+.soli{
+  margin: 1rem;
+  padding: 1rem;
+}
+.soli2{
+ 
+}
