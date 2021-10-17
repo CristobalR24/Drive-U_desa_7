@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: black;
+}
+
+
+section p {
+  overflow: hidden;
+  max-height: 0;
+  text-align: justify;
+  font-family: "Courier New", Courier, monospace;
+  background: #e4e4e4;
+  transition: all 0.3s ease-in;
+}
+
+section a {
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  padding: 10px;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #4B2E83;
+  border-bottom: 2px solid gray;
+  color: white;
+}
+
+section:target p {
+  max-height: 120px;
+  padding: 10px;
+}

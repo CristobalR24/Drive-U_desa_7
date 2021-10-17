@@ -1,0 +1,37 @@
+@charset "ISO-8859-1";
+.fling-minislide {width:60%; height:0px; padding-bottom: 25%; overflow:hidden; position:relative; padding-left:24%;}
+.fling-minislide img{ position:absolute; animation:fling-minislide 15s infinite; opacity:0; width: 60%; height: auto;}
+
+@keyframes fling-minislide {25%{opacity:1;} 40%{opacity:0;}}
+.fling-minislide img:nth-child(1){animation-delay:0s;}
+.fling-minislide img:nth-child(2){animation-delay:5s;}
+.fling-minislide img:nth-child(3){animation-delay:10s;}
+
+
+.imagen{
+	position:absolute;
+	padding-left:47%;
+	
+}
+
+.linea
+{
+position:absolute;
+padding-left:35%;
+text-align:center;
+}
+
+.pregunta{
+	font-size:40px;
+	text-align:center;
+	font-weight: bold;
+}
+
+.texto
+{
+	font-weight: bold;
+	font-size:30px;
+	text-align:center;
+	padding-left:25%;
+	padding-right:25%;
+}
