@@ -63,13 +63,13 @@
           <h4>Auto</h4>
           <div class="input-group">
             <div class="col-third">
-              <input type="text" readonly placeholder="Tipo"/>
+              <input type="text" placeholder="Tipo"/>
             </div>
             <div class="col-third">
-              <input type="text" readonly placeholder="Kilometraje"/>
+              <input type="text" placeholder="Kilometraje"/>
             </div>
             <div class="col-third">
-              <input type="text" readonly placeholder="Placa"/>
+              <input type="text" placeholder="Placa"/>
             </div>
           </div>
        </div>
