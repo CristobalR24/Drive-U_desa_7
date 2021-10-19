@@ -88,6 +88,7 @@
     </div>
     </br> 
     <a href="viajespendientes.php"><button class="btn-1">Regresar</button></a>
+    <a href="#"><button class="btn-1">Enviar</button></a>
   </div>
   <BR><BR><BR>
   <footer>
