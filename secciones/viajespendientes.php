@@ -75,7 +75,7 @@
       </br>
       <span class="survey-country grid-only">Fecha-Hora</span> 
       <span class="survey-stage">
-        <a href="informedeviaje.html"><button class="btn-1">Ver informe</button></a>
+        <a href="informedeviaje.php"><button class="btn-1">Ver informe</button></a>
       </span>   
       <div class="pull-right">
         <span class="survey-progress"><span class="survey-progress-bg"></span>
