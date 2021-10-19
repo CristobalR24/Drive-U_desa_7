@@ -47,18 +47,18 @@
    </nav>
    <br><br>
   <div class="fling-minislide">
-  <img src="imagenes/kirbo.png" alt="Slide 3" />
-  <img src="imagenes/mario.png" alt="Slide 2"  />
-  <img src="imagenes/sanic.png" alt="Slide 1" />
+  <img src="imagenes/Buses.jpg" alt="Slide 3" />
+  <img src="imagenes/Camioneta.jpg" alt="Slide 2"  />
+  <img src="imagenes/Gira.jpg" alt="Slide 1" />
  
 </div>
    <br>
 
     <div class="contenedor_noticias">
-       <div class="noticias">A</div>
-       <div class="noticias">B</div>
-       <div class="noticias">C</div>
-       <div class="noticias">D</div>
+       <div class="noticias"> </div>
+       <div class="noticias"> </div>
+       <div class="noticias"> </div>
+       <div class="noticias"> </div>
     </div>
 
    <BR><BR><br>
