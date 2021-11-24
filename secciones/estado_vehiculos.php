@@ -1,3 +1,7 @@
+<?php
+include("../conexion/conexion.php");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +10,11 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="../css/estilo.css" />
   <link rel="stylesheet" type="text/css" href="../css/estilo_estado_v.css" />
+
+  <script src="../js/funciones_lista_vehiculos.js"></script>
 </head>
 <body>
+
    <header>
    <div class="logo"><img src="../imagenes/logo_utp.png" width="120px">
     <span class="utp">Universidad Tecnológica de Panamá</span>
@@ -51,25 +58,63 @@
           <div class="Titulo_vehiculo"> Estado de vehiculos </div>
           
           <div class="Tabla">
-            <br>
-            <input type="search" name="busqueda" class="buscador" placeholder=" ">
-            <button type="button" class="buscar"><span class="material-icons pequeno">search</span></button>
+            <form action="../procesos/procesos_vehiculos.php" method="POST">
+              <br>
+              <label for="filtro">Filtrar por:</label>
+              <select name="filtro" id="filtro" onchange="Filtrar()">
+                <option value="x" disabled selected>...</option>
+                <option value="0">Mostrar Todos</option>
+                <option value="1">Matricula</option>
+                <option value="2">Tipo de vehiculo</option>
+                <option value="3">Disponibilidad</option>
+                <option value="4">Marca</option>
+              </select>
+              <input type="search" name="busqueda" id="busqueda" class="buscador" placeholder=" ">
+              <button type="submit" name="btnBuscar" id="bntBuscar" value="1" class="buscar"><span class="material-icons pequeno">search</span></button>
+            </form>
             <br><br>
             <div class="contenedor_table">
-              <table class="tablap">
+              <table class="tablap" id="tablap">
                 <thead>
                     <tr>
                       <th>ID</th>
+                      <th>Placa</th>
                       <th colspan=2>Tipo de vehículo</th>
+                      <th>Marca</th>
+                      <th>Capacidad</th>
                       <th>Estado</th>
+                      <th>Kilometraje</th>
                     </tr>
                 </thead>
                 <tbody>
-                  <?php for ($i = 1; $i <= 20; $i++) {?>
+                  <?php 
+                  if(isset($_GET["sql"])){
+                      $sql=$_GET["sql"];
+                  }
+                  else{
+                    $sql='SELECT v.id_vehiculo,m.modelo, placa,marca,estado,kilometraje,capacidad FROM vehiculos v INNER JOIN modelo m on v.modelo=m.id_modelo';
+                  }
+
+                  $consultarVehiculos=$con->query($sql);
+                  while($carro=$consultarVehiculos->fetch(PDO::FETCH_OBJ)){?>
                   <tr>
-                    <td>1</td>
-                    <td colspan=2>Sedan</td>
-                    <td>Disponible</td>
+                    <td><?php echo $carro->id_vehiculo;?></td>
+                    <td colspan=2><?php echo $carro->placa;?></td>
+                    <td><?php echo $carro->modelo?></td>
+                    <td><?php echo $carro->marca?></td>
+                    <td><?php echo $carro->capacidad?></td>
+
+                    <td><?php 
+                    if($carro->estado == 1)
+                    echo "Disponible";
+                    else if($carro->estado==2)
+                    echo "No disponible";
+                    else
+                    echo "En mantenimiento";
+                    ?>
+                    </td>
+
+                    <td><?php echo $carro->kilometraje?></td>
                   </tr>
                   <?php } ?>
                 </tbody>
@@ -77,25 +122,71 @@
             </div>
           </div>
          
-          <div class="Filtros">
-            <br><br><br>
-            <label for="filtro">Filtrar por:</label>
-            <select name="filtro" id="filtro">
-              <option value="ID">número de ID</option>
-              <option value="Vehiculo">Tipo de vehiculo</option>
-              <option value="Disponible">Disponibilidad</option>
-              <option value="audi">Audi</option>
-            </select>
+          <div class="Campos">
+            <h2>Datos del vehiculo</h2>
+            <br>
+
+            <form action="../procesos/procesos_vehiculos.php" method="POST">
+              
+              <input type="hidden" name ="m_id" id="m_id" placeholder="id" >
+              <label for="m_placa">Placa: </label>
+              <input type="text" name="m_placa" id="m_placa" placeholder="placa" readonly required>
+              <br><br>
+
+              <!-- Modelo se mostrara como un texto en editar y como select en agregar-->
+              <label id="tm_modelo" for="m_modelo">Modelo: </label>
+              <input type="text" id="m_modelo" placeholder="modelo" readonly>
+
+              <label id="tn_modelo" name="tn_modelo" for="n_modelo" style="display: none;">Modelo: </label>
+              <select name="n_modelo" id="n_modelo" style="display: none;"> <!-- onchange= cuando seleccionemos algo-->
+                  <option value="" disabled selected>----</option> <!--el usuario no podra utilizar esta opcion-->
+                  <option value="1">Sedan</option>
+                  <option value="2">Pickup</option>
+                  <option value="3">Sub Urban</option>
+                  <option value="4">Bus</option>
+              </select>
+              <br><br>
+
+              <!---->
+
+              <label for="m_marca">Marca: </label>
+              <input type="text" name="m_marca" id="m_marca" placeholder="marca" readonly required>
+              <br><br>
+
+              <label for="m_capacidad">Capacidad: </label>
+              <input type="text" name="m_capacidad" id="m_capacidad" placeholder="capacidad" readonly required>
+              <br><br>
+
+              <label for="m_kilometraje">Kilometraje: </label>
+              <input type="text" id="m_kilometraje" name="m_kilometraje" placeholder="kilometraje" required readonly>
+              <br><br>
+
+              <label for="m_estado">Estado: </label>
+              <select name="m_estado" id="m_estado" required disabled> <!-- onchange= cuando seleccionemos algo-->
+                  <option value="" disabled selected>----</option> <!--el usuario no podra utilizar esta opcion-->
+                  <option value="1">Disponible</option>
+                  <option value="2">No disponible</option>
+                  <option value="3">En mantenimiento</option>
+              </select>
+
+              <br><br>
+              <input type="submit" id="btnEliminar" name="btnEliminar" value="Eliminar" disabled/>
+
+              <input type="submit" id="btnActualizar" name="btnActualizar" value="Actualizar" disabled/>
+              
+              <br><br>
+              <input type="button" id="btnNuevo" name="btnNuevo" value="Añadir un nuevo vehiculo" onclick="agregar()"/>
+
+              <input type="submit" id="btnAgregar" name="btnAgregar" value="Agregar" style="visibility: hidden;"/>
+
+          </form>
           </div>
         <br><br>
+
       </div>
       
     </div>
   
-
-    <!--
-   
-  -->
   <br><br><br>
    <footer>
      <br>
