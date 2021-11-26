@@ -124,7 +124,7 @@ include("../conexion/conexion.php");
          
           <div class="Campos">
             <h2>Datos del vehiculo</h2>
-            <br>
+            
 
             <form action="../procesos/procesos_vehiculos.php" method="POST">
               
@@ -170,16 +170,18 @@ include("../conexion/conexion.php");
               </select>
 
               <br><br>
-              <input type="submit" id="btnEliminar" name="btnEliminar" value="Eliminar" disabled/>
+              <div class="opciones">
+                <input class="elimina" type="submit" id="btnEliminar" name="btnEliminar" value="Eliminar" disabled/>
 
-              <input type="submit" id="btnActualizar" name="btnActualizar" value="Actualizar" disabled/>
-              
-              <br><br>
-              <input type="button" id="btnNuevo" name="btnNuevo" value="Añadir un nuevo vehiculo" onclick="agregar()"/>
+                <input class="actualiza" type="submit" id="btnActualizar" name="btnActualizar" value="Actualizar" disabled/>
+                
+                <br><br>
+                <input class="nuevo" type="button" id="btnNuevo" name="btnNuevo" value="Añadir un nuevo vehiculo" onclick="agregar()"/>
 
-              <input type="submit" id="btnAgregar" name="btnAgregar" value="Agregar" style="visibility: hidden;"/>
-
+                <input class="nuevo" type="submit" id="btnAgregar" name="btnAgregar" value="Agregar" style="display:none;"/>
+              </div>
           </form>
+                  </div>
           </div>
         <br><br>
 
@@ -187,12 +189,12 @@ include("../conexion/conexion.php");
       
     </div>
   
-  <br><br><br>
+  <br><br><br><br><br><br><br><br><br>
    <footer>
      <br>
 	 ©2021. Drive-U.
      Universidad Tecnológica de Panamá
-     <BR>
+     <br>
      Confeccionado por Angel Carrillo, Wencers Castillo, Elianys González, Karla Quiel, Cristobal Rodriguez y Luis Saldaña. 
      <br><br>
  	</footer>

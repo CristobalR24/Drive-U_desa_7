@@ -33,6 +33,7 @@
 .lista{
      overflow:scroll;
      height: 80%;
+     width: 100%;
      margin-bottom: 1rem;
     overflow-x: hidden;}
 
@@ -49,6 +50,10 @@ ul{list-style: none;}
 
 .solicitud_l{ background-color: #FFFFFF;
               cursor: pointer;
+             
+              font-family: "Signika-Regular";
+              font-size: 1rem;
+              width: 100%;
               padding: 0.5rem;
               margin-bottom: 0.4rem;
              text-align: center; 

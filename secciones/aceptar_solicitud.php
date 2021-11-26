@@ -1,3 +1,8 @@
+<?php
+include("../conexion/conexion.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,6 +50,10 @@
   	</ul>
    </nav>
 
+   <script type="text/javascript">
+        function prueba(){
+          alert(document.getElementById('id_sol').value);}
+   </script>
     <div class="gran_area">
         <div class="hijo_1">
             <div class="hijo_2">
@@ -53,9 +62,13 @@
                     <br>
                     <div class="lista">
                     <ul>
-                        <?php for ($i = 1; $i <= 20; $i++) {?>
-                        <li class="solicitud_l">Solicitud: 20-10-2021</li>
-                        <li class="solicitud_l">Solicitud: 03-11-2021</li>	
+                        <?php  $consultarSolicitudes=$con->query('SELECT * FROM solicitud');
+                          while($solicitud=$consultarSolicitudes->fetch(PDO::FETCH_OBJ)){?>
+                            <form action="../procesos/procesos_aceptar_sol.php" method="POST">
+                              <input name="id_sol" id="id_sol" type="hidden" value="<?php echo $solicitud->id_solicitud;?>"/>
+                              <li><button type="submit" class="solicitud_l"><?php echo $solicitud->dia_viaje;?></button></li>
+                            </form>
+                        
                         <?php } ?>
                     </ul>
                     </div>

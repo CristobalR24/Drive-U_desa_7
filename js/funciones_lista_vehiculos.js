@@ -31,7 +31,7 @@ function Filtrar(){
             document.getElementById("btnEliminar").disabled = false;
             document.getElementById("m_estado").disabled = false;
 
-            document.getElementById("btnAgregar").style.visibility = "hidden";
+            document.getElementById("btnAgregar").style.display = "none";
             document.getElementById("btnNuevo").style.display = "block";
 
             document.getElementById("m_modelo").style.display="inline";
@@ -73,7 +73,7 @@ function agregar(){
   document.getElementById("btnEliminar").disabled = true;
   document.getElementById("m_estado").disabled = false;
 
-  document.getElementById("btnAgregar").style.visibility = "visible";
+  document.getElementById("btnAgregar").style.display = "inline";
   document.getElementById("btnNuevo").style.display = "none";
 
   document.getElementById("m_placa").readOnly = false;

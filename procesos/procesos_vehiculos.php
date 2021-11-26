@@ -99,10 +99,6 @@ function buscar(){
 
     }
 
-
-   /* $sql = $con->exec("SELECT v.id_vehiculo,m.modelo, placa,marca,estado,kilometraje,capacidad 
-                        FROM vehiculos v INNER JOIN modelo m on v.modelo=m.id_modelo '".$ID."'");
-*/
     header("Location: ../secciones/estado_vehiculos.php?sql=".$sql);
     exit();
 }
