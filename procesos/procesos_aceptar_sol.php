@@ -19,8 +19,8 @@ exit();
 
 function rechazar(){
     global $con;
-  echo "<br> ".$_POST["id_sol"]."<br><br>";
-  $id=$_POST["id_sol"];
+    echo "<br> ".$_POST["id_sol"]."<br><br>";
+    $id=$_POST["id_sol"];
 
     if(!isset($_POST["razon"]))
         echo $razon = "";

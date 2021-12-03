@@ -13,78 +13,35 @@ include("../conexion/conexion.php");
   <link rel="stylesheet" type="text/css" href="../css/estilo_aceptar_solicitud.css" />
 </head>
 <body>
-  <script type="text/javascript" defer>
-    window.onload = function(){
-           var modal1=document.getElementById('modalRechazo');
-           var modal2=document.getElementById('modalApruebo');
-
-           var activador1=document.getElementById('btnRechazo');
-           var activador2=document.getElementById('btnApruebo');
-           var cerrar1=document.getElementById('cerrar1');
-           var cerrar2=document.getElementById('cerrar2');
-
-           console.log(document.getElementById('modalRechazo'));
-
-           activador1.addEventListener('click',abrirModal1);
-           cerrar1.addEventListener('click',cerrarModal1);
-
-           activador2.addEventListener('click',abrirModal2);
-           cerrar2.addEventListener('click',cerrarModal2);
-
-           if(document.getElementById('acepto_chofer').options.length == 0 || document.getElementById('acepto_vehiculo').options.length == 0)
-            document.getElementById('aceptar').disabled=true;
-           else
-            document.getElementById('aceptar').disabled=false;
-
-            if(document.getElementById('acepto_chofer').options.length == 0)
-              document.getElementById('chof_msg').style.display = "inline";
-            else
-              document.getElementById('chof_msg').style.display = "none";
-
-            if(document.getElementById('acepto_vehiculo').options.length == 0)
-              document.getElementById('vehiculo_msg').style.display = "inline";
-            else
-              document.getElementById('vehiculo_msg').style.display = "none";
-
-
-           function abrirModal1(){
-               modal1.style.display='block';
-           }
-           function cerrarModal1(){
-               modal1.style.display='none';
-           }
-           function abrirModal2(){
-               modal2.style.display='block';
-           }
-           function cerrarModal2(){
-               modal2.style.display='none';
-           }
-          }
-  </script>
+  
+<script src="../js/funciones_procesar_sol.js"></script>
+  
 <!-- TODO ESTO ABARCA EL MODAL       -->
       <div id="modalRechazo" class="modal">
         <div class="contenido_modal">
             <span id="cerrar1" class="cerrar">&times;</span>
             
             <form action="../procesos/procesos_aceptar_sol.php" method="POST"> 
-            <br><br>
-              Rechazar solicitud
-              <br><br>
+            <br>
+              <span class="titulo_modal">Rechazar solicitud</span>
+                <br>
               <input type="checkbox" id="razon1" name="razon[]" value="Requiere salvoconducto">
               <label for="razon1">Requiere salvoconducto</label>
-              <br>
+                <br>
               <input type="checkbox" id="razon2" name="razon[]" value="No hay vehiculos disponibles">
               <label for="razon2">No hay vehiculos disponibles</label>
-              <br>
+                <br>
               <input type="checkbox" id="razon3" name="razon[]" value="No hay conductores disponibles">
               <label for="razon3">No hay conductores disponibles</label>
-              <br>
-              <label for="razon4">Otras razones: </label>
-              <input type="text" id="razon4" name="razon[]">
+                <br><br>
+              Otras razones: <br>
+              <textarea class="texto_m" type="text" id="razon4" name="razon[]"></textarea>
               <input type="hidden" name="id_sol" value="<?php echo $_GET["id"];?>">
-              <br>
-              <input name="rechazar" id="rechazar" type="submit" value="Rechazar solicitud"/>
-            </form>
+                <br><br>
+              <div style=" text-align: center;">
+                <input class="boton_m rechazar_m" name="rechazar" id="rechazar" type="submit" value="Rechazar solicitud"/>
+              </div>
+              </form>
         </div>
       </div>
 <!-- ---------  -->
@@ -95,53 +52,59 @@ include("../conexion/conexion.php");
             <span id="cerrar2" class="cerrar">&times;</span>
             
             <form action="../procesos/procesos_aceptar_sol.php" method="POST">
-            <br><br>
-              Aprobar solicitud
               <br><br>
+              <span class="titulo_modal">Aprobar solicitud</span>
+                <br><br>
              <!-- DATETIME values are always stored in 24h format --> 
-             <?php
-             if (isset($_GET["id"])){
-             $data=$con->query('SELECT dia_viaje, modelo_vehiculo, cantidad_personas FROM solicitud WHERE id_solicitud='.$_GET["id"]);
-                          while($datos=$data->fetch(PDO::FETCH_OBJ))
-                          {
-                            $a_modelo=$datos->modelo_vehiculo;
-                            $a_cantidad=$datos->cantidad_personas;
-                            $a_hora= $datos->dia_viaje;
-                            $dt = DateTime::createFromFormat("Y-m-d H:i:s", $a_hora);
-                            $a_hora= $dt->format('H');
-                          }
-                        
-                          ?>
-              <select name="acepto_vehiculo" id="acepto_vehiculo">
               <?php
+                if (isset($_GET["id"])){
+                $data=$con->query('SELECT dia_viaje, modelo_vehiculo, cantidad_personas FROM solicitud WHERE id_solicitud='.$_GET["id"]);
+                    while($datos=$data->fetch(PDO::FETCH_OBJ))
+                    {
+                      $a_modelo=$datos->modelo_vehiculo;
+                      $a_cantidad=$datos->cantidad_personas;
+                      $a_hora= $datos->dia_viaje;
+                      $dt = DateTime::createFromFormat("Y-m-d H:i:s", $a_hora);
+                      $a_hora= $dt->format('H');
+                    }
+                    ?>
+                <div style="text-align: left; margin-left:5rem;">
+                <label for="acepto_vehiculo">Vehiculo: </label>
+                <select name="acepto_vehiculo" id="acepto_vehiculo">
+                <?php
           //consulta anidada
-             $data=$con->query('SELECT * FROM vehiculos WHERE modelo='.$a_modelo.' AND id_vehiculo NOT IN (SELECT vehiculo FROM viajes WHERE estado=1)');
-                          while($datos=$data->fetch(PDO::FETCH_OBJ))
-                          {
-                         ?> 
-                         <option value="<?php echo $datos->id_vehiculo;?>"><?php echo $datos->placa;?></option>
-                         <?php } ?>
-              </select>
+      
+                $data=$con->query('SELECT v.id_vehiculo, v.placa, m.modelo, v.marca FROM vehiculos v INNER JOIN modelo m ON v.modelo=m.id_modelo WHERE v.modelo='.$a_modelo.' AND id_vehiculo NOT IN (SELECT vehiculo FROM viajes WHERE estado=1)');
+                  while($datos=$data->fetch(PDO::FETCH_OBJ))
+                  {
+                  ?> 
+                  <option value="<?php echo $datos->id_vehiculo;?>"><?php echo $datos->modelo." ".$datos->placa." ".$datos->marca;?></option>
+                  <?php } ?>
+                </select>
               <div id="vehiculo_msg" style="color: brown;">No hay vehiculos disponibles</div>
-              <br><br>
-              <select name="acepto_chofer" id="acepto_chofer">
+                <br><br>
+              <label for="acepto_chofer">Chofer designado: </label>
+                <select name="acepto_chofer" id="acepto_chofer">
+
               <?php
               // consulta anidada
-             $data=$con->query('SELECT * FROM usuarios WHERE tipo=3 AND id_usuario NOT IN (SELECT id_chofer FROM viajes WHERE estado=1)');
+              $data=$con->query('SELECT * FROM usuarios WHERE tipo=3 AND id_usuario NOT IN (SELECT id_chofer FROM viajes WHERE estado=1)');
                           while($datos=$data->fetch(PDO::FETCH_OBJ))
                           {
                          ?> 
                          <option value="<?php echo $datos->id_usuario;?>"><?php echo $datos->nombre;?></option>
                          <?php } ?>
-              </select>
-              <div id="chof_msg" style="color: brown;">No hay choferes disponibles</div>
-              <input type="hidden" name="hora" id="hora" value="<?php echo $a_hora; ?>">
-              <input type="hidden" name="cantidad" id="cantidad" value="<?php echo $a_cantidad; ?>">
-              <input type="hidden" name="id_sol" value="<?php echo $_GET["id"];?>">
-
+                </select>
+                <div id="chof_msg" style="color: brown;">No hay choferes disponibles</div>
+                <input type="hidden" name="hora" id="hora" value="<?php echo $a_hora; ?>">
+                <input type="hidden" name="cantidad" id="cantidad" value="<?php echo $a_cantidad; ?>">
+                <input type="hidden" name="id_sol" value="<?php echo $_GET["id"];?>">
+              </div>
               <?php } ?>
-              <br><br>
-              <input name="aceptar" id="aceptar" type="submit" value="Evaluar"/>
+              <br><br><br><br>
+              <div style="text-align: center;">
+                <input class="boton_m aceptar_m" name="aceptar" id="aceptar" type="submit" value="Evaluar"/>
+              </div>
             </form>
         </div>
       </div>
