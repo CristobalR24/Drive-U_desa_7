@@ -73,6 +73,7 @@ include("../conexion/conexion.php");
               <button type="submit" name="btnBuscar" id="bntBuscar" value="1" class="buscar"><span class="material-icons pequeno">search</span></button>
             </form>
             <br><br>
+            <span class="mensaje"><?php if(isset($_GET["msg"])){echo $_GET["msg"];}?></span>
             <div class="contenedor_table">
               <table class="tablap" id="tablap">
                 <thead>

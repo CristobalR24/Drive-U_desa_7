@@ -74,12 +74,12 @@ ul{list-style: none;}
 
 .solicitud_i{background-color: #FFFFFF;
             margin-top: 1rem;
-             width: 23rem;
+             width: 20rem;
+             padding: 1rem;
              margin-left: auto;
-             overflow: scroll;
-             overflow-x: hidden;
+             overflow: auto;
              margin-right: auto;
-             height: 20rem;}
+             height: 15rem;}
 
 .area_boton{width: 100%;
             text-align: center;
@@ -101,5 +101,37 @@ ul{list-style: none;}
 .boton.rechazar:hover{background-color: #e91313;}
 .boton.rechazar:active{background-color: #da2626;;
                     transform: translateY(4px);}
+                    
+/*--------------------------------------------------*/
 
 
+.modal{display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    z-index: 10000;
+    background-color: rgba(0, 0, 0, 0.5);}
+
+.contenido_modal{
+ background-color: #FFFFFF;
+ margin-top:4rem;
+ border-style: solid;
+ color: #000000;
+ margin-left: auto;
+ padding-inline: 1rem;
+ margin-right: auto;
+ width: 40%;
+ height: 70%;
+ font-family: sans-serif;
+}
+
+.cerrar{cursor:pointer;
+     float: right;
+     font-size: 2.5rem;
+}
+.cerrar :hover{color:#000000;}
+
+.mensaje{font-size: 1.4rem;}
+.error{color: #da2626;}
+.normal{color: #008a12;}

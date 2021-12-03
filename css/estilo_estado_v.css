@@ -185,3 +185,7 @@ select{font-family: "Signika-Regular";
 .actualiza:active{
   background-color: #863002;
 }
+
+.mensaje{color:red;
+         font-size: 1rem;
+         }
