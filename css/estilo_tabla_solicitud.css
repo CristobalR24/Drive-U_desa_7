@@ -1,0 +1,86 @@
+@font-face{
+	font-family: "Signika-Bold";
+	src: url("../fuentes/Signika-Bold.ttf") format("truetype");
+  }
+@font-face{
+font-family: "Signika-Regular";
+src: url("../fuentes/Signika-Regular.ttf") format("truetype");
+}
+
+@font-face{
+	font-family: "Century-Gothic";
+	src: url("../fuentes/Century-Gothic.ttf") format("truetype");
+}
+
+table {
+    width: 100%;
+    border: 1px solid #000;
+ }
+ th, td {
+    width: 5%;
+    font-family:"Signika-Regular";
+    text-align: center;
+    border: 1px solid #000;
+    border-collapse: collapse;
+ }
+
+ 
+form {
+    display : flex;
+    justify-content: center;
+    padding-top:25px;
+}
+
+.subtitulo{
+	 font-family: "Signika-Bold";
+	 text-align: center;
+}
+
+
+form fieldset{
+    font-family: "Signika-Regular";
+    font-size: 18px;
+    background-color:#d3c0d3;
+    border-radius:20px;
+    width:220px;
+    height:240px;
+    }
+
+    .entradas input[type=email]{
+        height:17px;
+        width:250px;
+                 font-family:"Signika-Regular";
+                  font-style: italic;
+                    font-size: 16px;
+                     border-radius:15px;}
+ .entradas{
+                        display:inline-block;
+                        font-size:20px;
+                       font-family:"Signika-Regular";
+                        color : #000000;
+                    }
+
+.enviar{
+                        background-color:#709e07;
+                        color:#FFFFFF;
+                        text-align: center;
+                        font-size:18px;
+                        border-radius:20px;
+                        font-family:Century-Gothic;
+                
+                       } 
+
+                       .cancelar{
+                        background-color:#b9181f;
+                        color:#FFFFFF;
+                        font-size:18px;
+                        border-radius:20px;
+                        font-family:Century-Gothic;
+                    }
+                    .centrear{
+                        text-align: center;
+                    }
+.centrear{
+    text-align: center;
+    font-family:"Signika-Regular";
+}
