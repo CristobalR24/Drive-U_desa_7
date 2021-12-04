@@ -1,3 +1,6 @@
+<?php
+include('../conexion/conexion.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,16 +52,13 @@
     <br>
     <br>
     <h1 class="subtitulo">Estado de Solicitud</h1>
-    <form action="estado_solicitud.html" method="POST">
+    <form action="../procesos/visualizarSolicitud.php" method="POST">
       <fieldset>
         <div class="entradas">
           Ingrese el ID de su Solicitud
           <input type="text" name="estado" required>
           <br>
           <br>
-
-
-     
           <div class="btn1">
             <input class="enviar" type="submit" value="Enviar Solicitud" >
           </div>
@@ -69,24 +69,9 @@
 
       </fieldset>
      </form>
-
      <br>
      <br>
      <br>
-     <h1 class="subtitulo">Desea solicitar un salvo conducto</h1>
-    <form action="estado_solicitud.html" method="POST">
-      <fieldset>
-        <div class="entradas">
-          <div class="soli">
-            <input class="enviar" type="submit" value="Si" >
-          </div>
-          <div class="soli">
-          <input  class ="cancelar" type="reset" name="Cancelar2" value="No">
-          </div>
-        </div>
-      </fieldset>
-     </form>
-
    </body>
    <BR><BR>
    <BR><BR>

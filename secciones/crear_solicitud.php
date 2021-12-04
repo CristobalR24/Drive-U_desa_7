@@ -1,3 +1,8 @@
+<?php
+include('../conexion/conexion.php');
+$consultar = $con->query('Select * from modelo');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,46 +54,46 @@
     <br>
     <br>
     <h1 class="subtitulo">Crear Solicitud</h1>
-    <form action="crear_solicitud.html" method="POST">
+    <form action="../procesos/insertarsoli.php" method="POST">
       <fieldset>
-        <div class="entradas">
+<div class="entradas">
         <div class ="two-col">
-          <div class="col1">
-        <label for="fiedl1">Nombre</label>
-        <input type="text" name="Nombre" required>
+
+        <div class="col1">
+    <label for="field2">Fecha y hora del Viaje</label>
+    <input type="datetime-local"  name="fecha" required>
       </div>
       <div class="col2">
-        <label for="field2">Cedula</label>
-        <input type="text" name="Cedula" required> 
-        </div>
-
+    <label for="field2">Telefono</label>
+    <input type="text" name="Telefono" required pattern="[0-9]{1,8}" title="Ingrese un numero de telefono valido">
+      </div>
     <div class="col3">
     <label for="field2">Correo Electronico</label>
     <input type="email" name="correo" required> 
       </div>
-       <div class="col1">
-        <label for="fiedl1">Cantidad de personas</label>
-        <input type="text" name="cantidad"  pattern="[1-1000]"  title="Solo es valido numeros" >
-      </div>
       <div class="col2">
-        <label for="field2">Destino</label>
+        <label for="field2">Inicio Destino</label>
         <input type="text" name="Destino" required pattern="[A-Za-z]{1,60}"> 
         </div>
+        
         <div class="col3">
     <label for="field2">Final del Destino</label>
     <input type="text" name="Final" required required pattern="[A-Za-z]{1,60}"> 
       </div>
-       <div class="col1">
-        <label for="fiedl1">Chofer</label>
-        <input type="text" name="chofer" required required pattern="[A-Za-z]{1,60}">
-      </div>
-       <div class="col2">
-        <label for="field2">Tipo de Vehiculo</label>
-        <input type="text" name="vehiculo" required> 
-        </div>
-        <div class="col3">
-    <label for="field2">Telefono</label>
-    <input type="text" name="Telefono" required pattern="[0-9]{1,8}" title="Ingrese un numero de telefono valido">
+       <div class="col3">
+       <label for="fiedl1">Cantidad de personas</label>
+        <input type="number" name="cantidad" min="1" max="60">
+      </div> 
+     <div class="col2">
+    <label for="field2">Modelo del Vehiculo</label>
+    <div class="select">
+      <select name="modelo" required>
+       <?php while($detalleuser=$consultar->fetch(PDO::FETCH_OBJ) ){
+         ?>
+      <option value="<?php echo $detalleuser->id_modelo;?>"><?php echo $detalleuser->modelo;?></option>
+        <?php } ?>
+        </select>
+     </div>
       </div>
     </div>
     <br>
@@ -97,6 +102,8 @@
      </div>
      <div class="btn2">
        <input  class ="cancelar" type="reset" name="Cancelar" value="Cancelar">
+     </div>
+  </div>
       </fieldset>
      </form>
    </body>
