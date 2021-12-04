@@ -33,6 +33,7 @@
 .lista{
      overflow:scroll;
      height: 80%;
+     width: 100%;
      margin-bottom: 1rem;
     overflow-x: hidden;}
 
@@ -49,6 +50,10 @@ ul{list-style: none;}
 
 .solicitud_l{ background-color: #FFFFFF;
               cursor: pointer;
+             
+              font-family: "Signika-Regular";
+              font-size: 1rem;
+              width: 100%;
               padding: 0.5rem;
               margin-bottom: 0.4rem;
              text-align: center; 
@@ -69,12 +74,12 @@ ul{list-style: none;}
 
 .solicitud_i{background-color: #FFFFFF;
             margin-top: 1rem;
-             width: 23rem;
+             width: 20rem;
+             padding: 1rem;
              margin-left: auto;
-             overflow: scroll;
-             overflow-x: hidden;
+             overflow: auto;
              margin-right: auto;
-             height: 20rem;}
+             height: 15rem;}
 
 .area_boton{width: 100%;
             text-align: center;
@@ -83,9 +88,9 @@ ul{list-style: none;}
        padding: 0.5rem;
        width: 6rem;
        border:2px solid #000000;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    box-shadow: 0 0.4rem #999;
+       margin-left: 1rem;
+       margin-right: 1rem;
+       box-shadow: 0 0.4rem #999;
 }
 
 .aceptar{background-color: #63ff4f;}
@@ -96,5 +101,71 @@ ul{list-style: none;}
 .boton.rechazar:hover{background-color: #e91313;}
 .boton.rechazar:active{background-color: #da2626;;
                     transform: translateY(4px);}
+                    
+/*--------------------------------------------------*/
 
 
+.modal{display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    z-index: 10000;
+    background-color: rgba(0, 0, 0, 0.5);}
+
+.contenido_modal{
+ background-color: #FFFFFF;
+ margin-top:4rem;
+ border-style: solid;
+ color: #000000;
+ margin-left: auto;
+ padding-inline: 1rem;
+ margin-right: auto;
+ width: 35%;
+ height: 50%;
+ font-family: "Signika-Regular";
+}
+.contenido_modal select{
+    font-size: 1rem;
+    font-family: "Signika-Regular";
+   }
+
+.cerrar{cursor:pointer;
+     float: right;
+     font-size: 2.5rem;
+}
+.cerrar :hover{color:#000000;}
+
+.mensaje{font-size: 1.4rem;}
+.error{color: #da2626;}
+.normal{color: #008a12;}
+
+.titulo_modal{color:#4B2E83;
+              font-size: 1.5rem;
+              display: block;
+              text-align: center;
+              font-family: "Signika-Bold";}
+
+.boton_m{cursor: pointer;
+        padding: 0.5rem;
+        width: fit-content;
+        border:2px solid #000000;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        box-shadow: 0 0.4rem #999;
+        }
+                
+.texto_m{ resize: none;
+          height: 4rem;
+          width: 95%;
+          font-family: "Signika-Regular";
+          font-size: 1rem;}
+
+.aceptar_m{background-color: #63ff4f;}
+.rechazar_m{background-color: #da2626;}
+.boton_m.aceptar_m:hover{background-color: #18cc00;}
+.boton_m.aceptar_m:active{background-color: #63ff4f;;
+                    transform: translateY(4px);}
+.boton_m.rechazar_m:hover{background-color: #e91313;}
+.boton_m.rechazar_m:active{background-color: #da2626;;
+                    transform: translateY(4px);}
