@@ -57,6 +57,15 @@ height:240px;
     text-align: center;
 }
 
+.entradas input[type=number]{
+    height:17px;
+    width:250px;
+             font-family:"Signika-Regular";
+              font-style: italic;
+                font-size: 16px;
+                 border-radius:15px;
+}
+
 .enviar{
  background-color:#709e07;
  color:#FFFFFF;
