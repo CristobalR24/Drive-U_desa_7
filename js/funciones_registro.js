@@ -152,7 +152,7 @@ function good_pass()
 {
     document.getElementById('reg').disabled=false
     document.getElementById('reg').textContent="Registrarse"
-    document.getElementById('reg').style.background="#72d192"
+    document.getElementById('reg').style.background="#540357"
  
 
 }
