@@ -1,3 +1,13 @@
+@font-face{
+	font-family: "Signika-Bold";
+	src: url("../fuentes/Signika-Bold.ttf") format("truetype");
+  }
+@font-face{
+font-family: "Signika-Regular";
+src: url("../fuentes/Signika-Regular.ttf") format("truetype");
+}
+
+
 h2 {
   padding-left: 5px;
 }
@@ -15,7 +25,7 @@ h2 {
 }
 #preguntas h2 {
 	color: #f05454;
-	font-family: 'hm_light', sans-serif;
+	font-family: "Signika-Regulars",'hm_light', sans-serif;
 	font-size: 20px;
 	text-align: left;
 	line-height: 34px;
@@ -32,7 +42,7 @@ h2 {
 	color: #fff;
 	text-align: left;
 	font-family: 'hm_light', sans-serif;
-	font-size: 14px;
+	font-size: 18px;
 	line-height: 1.45;
 	position: relative;
 	overflow: hidden;

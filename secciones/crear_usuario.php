@@ -87,6 +87,10 @@
                     </select>
                    <br>
                    <br>
+                   <span class="texto">Email</span>
+                   <br>
+                 <input id="email" class="estilo" type="email" placeholder="Email" required name="email">
+                    <br>
                    <span class="texto">Contraseña</span>
                    <br>
                  <input id="pass1" class="estilo" type="password" placeholder="Contraseña" maxlength="18" required onkeyup="validar_pass();"  >

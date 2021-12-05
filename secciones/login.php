@@ -29,9 +29,9 @@
          <h1>Inicio de sesión</h1>
          
          <BR>
-         Correo: <input type="text" name=correo required>
+         Correo: <input type="text" name=correo required placeholder="direccion@email.com">
          <BR>
-         Contraseña: <input type="password" name=password required>
+         Contraseña: <input type="password" name=password required placeholder="*********">
 
          <BR><BR>
          <button class="envio" type="submit">Acceder</button>
