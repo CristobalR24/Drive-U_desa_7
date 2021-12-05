@@ -41,12 +41,28 @@ text-align:center;
 	width: 100%;
 	gap:1rem;
 	justify-content: center;
-	height: 15rem;
+	height: 21.5rem;
 }
 .noticias{
 	border-radius: 3%;
 	padding: 1rem;
-	background-color: #d3c0d3;
+	background-color: rgb(243, 234, 234);
 	width: 20rem;
 	height: 100%;
+}
+
+.imagenes{
+	width:320px; 
+	height:180px;
+	border-radius: 2.5%;
+}
+
+.titulos_noticias{
+	font-family: Arial;
+	text-align: center;
+}
+
+p{
+	text-align: justify;
+	font-family: Arial;
 }
