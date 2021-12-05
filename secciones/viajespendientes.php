@@ -53,12 +53,17 @@ include("../conexion/conexion.php");
 
   <?php
   if ($con){
-    $consulta = $con->query("SELECT * FROM viajes");
+    $consulta = $con->query("SELECT v.fecha, v.destino, v.estado, v.id_viaje, vh.marca FROM viajes v 
+    INNER JOIN vehiculos vh ON v.vehiculo = vh.id_vehiculo ");
+
     while ($row = $consulta->fetch()) {
       $fecha = $row['fecha'];
       $destino = $row['destino'];
-      $vehiculo = $row['vehiculo'];
+      $vehiculo = $row['marca'];
       $estado = $row['estado'];
+      $id_viaje = $row['id_viaje'];
+
+
 
       if ($estado == '1')
       {
@@ -75,9 +80,11 @@ include("../conexion/conexion.php");
             </br>
             <span class="survey-country list-only">FECHA: <?php echo $fecha; ?></span> 
             </br>
+            <span class="survey-country list-only">ID Viaje: <?php echo $id_viaje; ?></span> 
+            </br>
             </br>
             <span class="survey-stage">
-              <a href="informedeviaje.php"><button class="btn-1">Ver informe</button></a>
+              <a href="informedeviaje.php?id_viaje=<?php echo $id_viaje ?>"><button class="btn-1">Ver informe</button></a>
             </span> 
           </li>   
         </ul>
