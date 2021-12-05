@@ -50,42 +50,76 @@
     
         <div class="login_div">
             <div class="margin">
-                <form  id="form_registro">
+                <form  id="form_registro" action="crear_usuario.php" method="POST">
                     <h1 class="titulo_h1">
                         Registrar Usuario
                     </h1>
                     <span class="texto">Nombre</span> 
                    <br>
-                   <input  id="input_user" class="estilo" placeholder="Nombre y Apellido" maxlength="20" onkeyup="validar_nombre();" required>
+                   <input name="nombre"  id="input_user" class="estilo" placeholder="Nombre y Apellido" maxlength="20" onkeyup="validar_nombre();" required>
                     <br>
-                   <span class="texto">Email</span> 
+                    <br>
+                   <span class="texto">Cedula</span> 
                    <br>
-                   <input id="input_correo" type="email" class="estilo" placeholder="correo@dominio.com" maxlength="20" required>
+                   <input name="cedula" id="input_cedula" type="Text" class="estilo" placeholder="Cedula" maxlength="30" required>
+                   <br>
                    <br>
                    <span class="texto">Departamento</span>
                    <br>
-                    <select class="depa">
-                        <option class="opt">FISC</option>
-                        <option class="opt">FISC</option>
-                        <option class="opt">FISC</option>
-                        <option class="opt">FISC</option>
-                        <option class="opt">FISC</option>
+                    <select name="facultad" class="depa" onchange="t()">
+                        <option class="opt" value="1" selected="selected">FISC</option>
+                        <option class="opt" value="2">FII</option>
+                        <option class="opt" value="3">FIE</option>
+                        <option class="opt" value="4">FIM</option>
+                        <option class="opt" value="5">FCT</option>
                     </select>
+
+                    <br>
+                    <br>
+
+                    <span class="texto">Tipo Usuario </span>
+                    <br>
+                    <select name="tipo" class="depa" onchange="t()">
+                        <option class="opt" value="1" selected="selected">Colaborador UTP</option>
+                        <option class="opt" value="2">Administrador</option>
+                        <option class="opt" value="3">Chofer</option>
+                    </select>
+                   <br>
                    <br>
                    <span class="texto">Contraseña</span>
                    <br>
                  <input id="pass1" class="estilo" type="password" placeholder="Contraseña" maxlength="18" required onkeyup="validar_pass();"  >
                     <br>
+                    <br>
                     <span class="texto">Confirma tu contraseña</span>
                     <br>
-                 <input id="pass2" class="estilo" type="password" placeholder="Contraseña" maxlength="18" required onkeyup="validar_pass();"  >
+                 <input name="pass" id="pass2" class="estilo" type="password" placeholder="Contraseña" maxlength="18" required onkeyup="validar_pass();"  >
                     <br>
 
                 </form>
                 <br>
-                <Button type="submit" id="reg" class="glow-on-hover" value="submit" form="form_registro" >
+                <Button name="envio" type="submit" id="reg" class="glow-on-hover" value="submit" form="form_registro" >
                     Registrarse
                 </Button>
+
+                  <?php
+                      include('../procesos/proceso_registro_usuario.php');
+                      $reg = new registrar_usuario();
+                        if(isset($_POST['envio']))
+                        {
+                          try
+                          {
+                            $registro= $reg->registrar();
+                                  
+                          }
+                          catch(PDOExceptio $ex)
+                          {
+                  
+                          }
+                        }
+
+                      ?>
+
             </div>
 
         </div>
@@ -99,5 +133,9 @@
      Confeccionado por Angel Carrillo, Wencers Castillo, Elianys González, Karla Quiel, Cristobal Rodriguez y Luis Saldaña. 
      <br><br>
  	</footer>
+
+  
+   
+
 </body>
 </html>
