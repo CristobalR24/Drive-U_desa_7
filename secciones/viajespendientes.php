@@ -1,3 +1,7 @@
+<?php
+include("../conexion/conexion.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -46,164 +50,52 @@
 			<li class="derecha"><a href="login.php">Iniciar sesión <span class="material-icons pequeno">home</span> </a></li>	
   	</ul>
    </nav>
+
+  <?php
+  if ($con){
+    $consulta = $con->query("SELECT v.fecha, v.destino, v.estado, v.id_viaje, vh.marca FROM viajes v 
+    INNER JOIN vehiculos vh ON v.vehiculo = vh.id_vehiculo ");
+
+    while ($row = $consulta->fetch()) {
+      $fecha = $row['fecha'];
+      $destino = $row['destino'];
+      $vehiculo = $row['marca'];
+      $estado = $row['estado'];
+      $id_viaje = $row['id_viaje'];
+
+
+
+      if ($estado == '1')
+      {
+
+      
+      ?>
+
+      
+      <ul class="pull-right">
+          <li class="survey-item">
+            <span class="survey-name">DESTINO: <?php echo $destino; ?></span>     
+            </br>
+            <span class="survey-country grid-only">VEHICULO: <?php echo $vehiculo; ?></span>   
+            </br>
+            <span class="survey-country list-only">FECHA: <?php echo $fecha; ?></span> 
+            </br>
+            <span class="survey-country list-only">ID Viaje: <?php echo $id_viaje; ?></span> 
+            </br>
+            </br>
+            <span class="survey-stage">
+              <a href="informedeviaje.php?id_viaje=<?php echo $id_viaje ?>"><button class="btn-1">Ver informe</button></a>
+            </span> 
+          </li>   
+        </ul>
+      <?php
+      }
+    }
+  }
+  ?>
+
+
   
-  <span class="toggler active" data-toggle="grid"><span class="entypo-layout"></span></span>
-  <span class="toggler" data-toggle="list"><span class="entypo-list"></span></span>
-  
-  <ul class="surveys grid">
-    <li class="survey-item">
-      <span class="survey-country list-only">Vehículo</span>
-      <span class="survey-name">Destino</span>   
-      <span class="survey-country grid-only">Vehículo</span>   
-      </br>
-      <span class="survey-country grid-only">Fecha-Hora</span> 
-      <span class="survey-stage">
-        <a href="informedeviaje.php"><button class="btn-1">Ver informe</button></a>
-      </span>   
-      <div class="pull-right">
-        <span class="survey-progress"><span class="survey-progress-bg"></span>
-        <span class="survey-progress-labels"><span class="survey-progress-label">Estado</span></span>
-        <span class="survey-country list-only">Fecha-Hora</span>
-        <span class="survey-stage"></span>
-      </div>
-    </li>
-
-    <li class="survey-item">
-      <span class="survey-country list-only">Vehículo</span>
-      <span class="survey-name">Destino</span>   
-      <span class="survey-country grid-only">Vehículo</span>   
-      </br>
-      <span class="survey-country grid-only">Fecha-Hora</span> 
-      <span class="survey-stage">
-        <a href="informedeviaje.php"><button class="btn-1">Ver informe</button></a>
-      </span>   
-      <div class="pull-right">
-        <span class="survey-progress"><span class="survey-progress-bg"></span>
-        <span class="survey-progress-labels"><span class="survey-progress-label">Estado</span></span>
-        <span class="survey-country list-only">Fecha-Hora</span>
-        <span class="survey-stage"></span>
-      </div>
-    </li>
-
-    <li class="survey-item">
-      <span class="survey-country list-only">Vehículo</span>
-      <span class="survey-name">Destino</span>   
-      <span class="survey-country grid-only">Vehículo</span>   
-      </br>
-      <span class="survey-country grid-only">Fecha-Hora</span> 
-      <span class="survey-stage">
-        <a href="informedeviaje.html"><button class="btn-1">Ver informe</button></a>
-      </span>   
-      <div class="pull-right">
-        <span class="survey-progress"><span class="survey-progress-bg"></span>
-        <span class="survey-progress-labels"><span class="survey-progress-label">Estado</span></span>
-        <span class="survey-country list-only">Fecha-Hora</span>
-        <span class="survey-stage"></span>
-      </div>
-    </li>
-
-    <li class="survey-item">
-      <span class="survey-country list-only">Vehículo</span>
-      <span class="survey-name">Destino</span>   
-      <span class="survey-country grid-only">Vehículo</span>   
-      </br>
-      <span class="survey-country grid-only">Fecha-Hora</span> 
-      <span class="survey-stage">
-        <a href="informedeviaje.html"><button class="btn-1">Ver informe</button></a>
-      </span>   
-      <div class="pull-right">
-        <span class="survey-progress"><span class="survey-progress-bg"></span>
-        <span class="survey-progress-labels"><span class="survey-progress-label">Estado</span></span>
-        <span class="survey-country list-only">Fecha-Hora</span>
-        <span class="survey-stage"></span>
-      </div>
-    </li>
-
-    <li class="survey-item">
-      <span class="survey-country list-only">Vehículo</span>
-      <span class="survey-name">Destino</span>   
-      <span class="survey-country grid-only">Vehículo</span>   
-      </br>
-      <span class="survey-country grid-only">Fecha-Hora</span> 
-      <span class="survey-stage">
-        <a href="informedeviaje.html"><button class="btn-1">Ver informe</button></a>
-      </span>   
-      <div class="pull-right">
-        <span class="survey-progress"><span class="survey-progress-bg"></span>
-        <span class="survey-progress-labels"><span class="survey-progress-label">Estado</span></span>
-        <span class="survey-country list-only">Fecha-Hora</span>
-        <span class="survey-stage"></span>
-      </div>
-    </li>
-
-    <li class="survey-item">
-      <span class="survey-country list-only">Vehículo</span>
-      <span class="survey-name">Destino</span>   
-      <span class="survey-country grid-only">Vehículo</span>   
-      </br>
-      <span class="survey-country grid-only">Fecha-Hora</span> 
-      <span class="survey-stage">
-        <a href="informedeviaje.html"><button class="btn-1">Ver informe</button></a>
-      </span>   
-      <div class="pull-right">
-        <span class="survey-progress"><span class="survey-progress-bg"></span>
-        <span class="survey-progress-labels"><span class="survey-progress-label">Estado</span></span>
-        <span class="survey-country list-only">Fecha-Hora</span>
-        <span class="survey-stage"></span>
-      </div>
-    </li>
-
-    <li class="survey-item">
-      <span class="survey-country list-only">Vehículo</span>
-      <span class="survey-name">Destino</span>   
-      <span class="survey-country grid-only">Vehículo</span>   
-      </br>
-      <span class="survey-country grid-only">Fecha-Hora</span> 
-      <span class="survey-stage">
-        <a href="informedeviaje.html"><button class="btn-1">Ver informe</button></a>
-      </span>   
-      <div class="pull-right">
-        <span class="survey-progress"><span class="survey-progress-bg"></span>
-        <span class="survey-progress-labels"><span class="survey-progress-label">Estado</span></span>
-        <span class="survey-country list-only">Fecha-Hora</span>
-        <span class="survey-stage"></span>
-      </div>
-    </li>
-
-    <li class="survey-item">
-      <span class="survey-country list-only">Vehículo</span>
-      <span class="survey-name">Destino</span>   
-      <span class="survey-country grid-only">Vehículo</span>   
-      </br>
-      <span class="survey-country grid-only">Fecha-Hora</span> 
-      <span class="survey-stage">
-        <a href="informedeviaje.html"><button class="btn-1">Ver informe</button></a>
-      </span>   
-      <div class="pull-right">
-        <span class="survey-progress"><span class="survey-progress-bg"></span>
-        <span class="survey-progress-labels"><span class="survey-progress-label">Estado</span></span>
-        <span class="survey-country list-only">Fecha-Hora</span>
-        <span class="survey-stage"></span>
-      </div>
-    </li>
-
-    <li class="survey-item">
-      <span class="survey-country list-only">Vehículo</span>
-      <span class="survey-name">Destino</span>   
-      <span class="survey-country grid-only">Vehículo</span>   
-      </br>
-      <span class="survey-country grid-only">Fecha-Hora</span> 
-      <span class="survey-stage">
-        <a href="informedeviaje.html"><button class="btn-1">Ver informe</button></a>
-      </span>   
-      <div class="pull-right">
-        <span class="survey-progress"><span class="survey-progress-bg"></span>
-        <span class="survey-progress-labels"><span class="survey-progress-label">Estado</span></span>
-        <span class="survey-country list-only">Fecha-Hora</span>
-        <span class="survey-stage"></span>
-      </div>
-    </li>    
-  </ul>
   <BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
   <footer>
     <br>

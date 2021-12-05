@@ -1,3 +1,7 @@
+<?php
+include("../conexion/conexion.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -45,51 +49,87 @@
   	</ul>
    </nav>
   <br><br>
-  <div class="container">
-    <form>
-      <div class="row">
-        <h1>Informe de Viaje</h1>
-        <h4>Chofer</h4>
-        <div class="input-group input-group-icon">
-        <input type="text" readonly placeholder="Nombre"/>
-        <div class="input-icon"><i class="fa fa-user"></i></div>
-      </div>
-      <div class="input-group input-group-icon">
-        <input type="text" readonly placeholder="Cédula"/>
-        <div class="input-icon"><i class="fa fa-user"></i></div>
-      </div>
-      <div class="row">
-        <div class="col-half">
-          <h4>Auto</h4>
-          <div class="input-group">
-            <div class="col-third">
-              <input type="text" placeholder="Tipo"/>
-            </div>
-            <div class="col-third">
-              <input type="text" placeholder="Kilometraje"/>
-            </div>
-            <div class="col-third">
-              <input type="text" placeholder="Placa"/>
-            </div>
-          </div>
-       </div>
-      </div>
-      <div class="col-half">
-        <div class="input-group input-group-icon">
-          <input type="text" readonly placeholder="ID De solicitud"/>
-          <div class="input-icon"><i class="fa fa-key"></i></div>
+
+  <?php
+  
+  $id_viaje=($_GET['id_viaje']);
+
+  if ($con){
+    $consulta = $con->query("SELECT u.nombre, u.cedula, m.modelo, h.placa, v.id_viaje, h.kilometraje FROM viajes v 
+    INNER JOIN usuarios u ON v.id_chofer=u.id_usuario 
+    INNER JOIN vehiculos h ON v.vehiculo=h.id_vehiculo
+    INNER JOIN modelo m ON h.modelo=m.id_modelo
+    WHERE id_viaje = v.id_viaje");
+   
+   while ($row = $consulta->fetch()) {
+      $nombre = $row['nombre'];
+      $cedula = $row['cedula'];
+      $placa = $row['placa'];
+      $tipodeauto = $row['modelo'];
+      $kilometraje = $row['kilometraje'];
+      $id_viaje1 = $row['id_viaje'];
+
+     if ($id_viaje == $id_viaje1)
+     {
+
+     
+      ?>
+    
+      <div class="container">
+        
+      <form>
+        <div class="row">
+          <h1>Informe de Viaje</h1>
+          <h4>Chofer</h4>
+          <div class="input-group input-group-icon">
+          <input type="text" readonly placeholder="<?php echo $nombre; ?>"/>
+          <div class="input-icon"><i class="fa fa-user"></i></div>
         </div>
+        <div class="input-group input-group-icon">
+          <input type="text" readonly placeholder="<?php echo $cedula; ?>"/>
+          <div class="input-icon"><i class="fa fa-user"></i></div>
+        </div>
+        <div class="col-half">
+          <h4>ID Viaje</h4>
+          <div class="input-group input-group-icon">
+            <input type="text" readonly placeholder="<?php echo $id_viaje1; ?>"/>
+            <div class="input-icon"><i class="fa fa-key"></i></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-half">
+            <h4>__________Auto____________Kilometraje____________Placa_________</h4>
+            <div class="input-group">
+              <div class="col-third">
+                <input type="text" placeholder="<?php echo $tipodeauto; ?>"/>
+              </div>
+              <div class="col-third">
+                <input type="text" placeholder="<?php echo $kilometraje; ?>"/>
+              </div>
+              <div class="col-third">
+                <input type="text" placeholder="<?php echo $placa; ?>"/>
+              </div>
+            </div>
+         </div>
+        </div>
+       
+        <div class="col-half">
+          <div class="input-group"></div>
+        </div>
+        </div>
+      </form>
       </div>
-      <div class="col-half">
-        <div class="input-group"></div>
-      </div>
-      </div>
-    </form>
+      </br> 
+      <a href="viajespendientes.php"><button class="btn-1">Regresar</button></a>
+      <a href="#"><button class="btn-1">Enviar</button></a>
     </div>
-    </br> 
-    <a href="viajespendientes.php"><button class="btn-1">Regresar</button></a>
-    <a href="#"><button class="btn-1">Enviar</button></a>
-  </div>
+      <?php
+      }
+    }
+  }
+  ?>
+
+ 
   <BR><BR><BR>
   <footer>
   <br>
