@@ -88,7 +88,7 @@
        </div>
     </div>
 
-   <BR><BR><br>
+   <BR>
    <footer>
      <br>
 	 ©2021. Drive-U.

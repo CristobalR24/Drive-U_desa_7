@@ -118,7 +118,7 @@ nav ul li:hover .submenu{display:block;
 footer {text-align:center;
 	font-family:"Signika-Regular";
 	font-size:16px;
-    width:100%;
+    width:100vw;
     color:#FFFFFF;
     background-color: #4B2E83;}
 
