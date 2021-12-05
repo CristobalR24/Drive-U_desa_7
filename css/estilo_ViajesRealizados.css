@@ -11,11 +11,11 @@
 /*IMPORTACIÓN DE LAS LETRAS*/
 @font-face{
 	font-family: "Signika-Bold";
-	src: url("../fuentes/Signika-Bold.ttf") format("truetype");
+	src: url("font/Signika-Bold.ttf") format("truetype");
   }
   @font-face{
 	font-family: "Signika-Regular";
-	src: url("../fuentes/Signika-Regular.ttf") format("truetype");
+	src: url("font/Signika-Regular.ttf") format("truetype");
   }
 
 * {
@@ -46,7 +46,7 @@ a{text-decoration: none;}
 .survey-item {
   display: block;
   margin-top: 10px;
-  padding: 20px;
+  padding: 10px;
   border-radius: 5px;
   background: white;
   box-shadow: 0 2px 1px rgba(170, 170, 170, 0.25);
@@ -150,8 +150,8 @@ a{text-decoration: none;}
   position: relative;
   display: inline-block;
   vertical-align: top;
-  height: 200px;
-  width: 250px;
+  height: 15em;
+  width: 14em;
   margin: 10px;
 }
 @media screen and (max-width: 600px) {
