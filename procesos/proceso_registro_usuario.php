@@ -13,13 +13,13 @@ class registrar_usuario
                 $tipo=$_POST['tipo'];
                 $pass=md5($_POST['pass']);
 
-                echo $facultad;
+                //echo $facultad;
                 $data=['nombre'=>$nombre,"facultad"=>$facultad,"cedula"=>$cedula,"password"=>$pass,"tipo"=>$tipo];
                 $sql="insert into usuarios(nombre,facultad,cedula,password,tipo) values (:nombre,:facultad,:cedula,:password,:tipo);";
                 $stmt=$con->prepare($sql);
                 if($stmt->execute($data) )
                 {
-                    echo "exito";
+                    //echo "exito";
                 }
                 
         }

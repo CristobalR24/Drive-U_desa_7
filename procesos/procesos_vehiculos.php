@@ -47,7 +47,7 @@ function agregar(){
         $msg="Vehiculo registrado";
     } catch (PDOException $e) {
         if($e->errorInfo[1] == 1062){
-            $msg="Esta matricula ya esta registrado";
+            $msg="Esta matricula ya esta registrada";
         }
         else
             $msg="Error al registrar: ".$e->getMessage();

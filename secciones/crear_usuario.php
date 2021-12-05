@@ -67,11 +67,12 @@
                    <span class="texto">Departamento</span>
                    <br>
                     <select name="facultad" class="depa" onchange="t()">
-                        <option class="opt" value="1" selected="selected">FISC</option>
-                        <option class="opt" value="2">FII</option>
+                        <option class="opt" value="6" selected="selected">FISC</option>
+                        <option class="opt" value="4">FII</option>
                         <option class="opt" value="3">FIE</option>
-                        <option class="opt" value="4">FIM</option>
-                        <option class="opt" value="5">FCT</option>
+                        <option class="opt" value="5">FIM</option>
+                        <option class="opt" value="1">FCT</option>
+                        <option class="opt" value="2">FIC</option>
                     </select>
 
                     <br>
