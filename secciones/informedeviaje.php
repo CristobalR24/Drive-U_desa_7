@@ -55,7 +55,7 @@ include("../conexion/conexion.php");
   $id_viaje=($_GET['id_viaje']);
 
   if ($con){
-    $consulta = $con->query("SELECT u.nombre, u.cedula, m.modelo, h.placa, v.id_viaje, h.kilometraje FROM viajes v 
+    $consulta = $con->query("SELECT u.nombre, u.cedula, v.vehiculo, m.modelo, h.placa, v.id_viaje, h.kilometraje FROM viajes v 
     INNER JOIN usuarios u ON v.id_chofer=u.id_usuario 
     INNER JOIN vehiculos h ON v.vehiculo=h.id_vehiculo
     INNER JOIN modelo m ON h.modelo=m.id_modelo
@@ -68,6 +68,7 @@ include("../conexion/conexion.php");
       $tipodeauto = $row['modelo'];
       $kilometraje = $row['kilometraje'];
       $id_viaje1 = $row['id_viaje'];
+      $id_vehiculo = $row['vehiculo'];
 
      if ($id_viaje == $id_viaje1)
      {
@@ -77,7 +78,7 @@ include("../conexion/conexion.php");
     
       <div class="container">
         
-      <form>
+      <form action="../procesos/actualizar_kilometraje.php" method="POST">
         <div class="row">
           <h1>Informe de Viaje</h1>
           <h4>Chofer</h4>
@@ -101,13 +102,14 @@ include("../conexion/conexion.php");
             <h4>__________Auto____________Kilometraje____________Placa_________</h4>
             <div class="input-group">
               <div class="col-third">
-                <input type="text" placeholder="<?php echo $tipodeauto; ?>"/>
+                <input type="text" readonly placeholder="<?php echo $tipodeauto; ?>"/>
+              </div>
+      
+              <div class="col-third">
+                <input name="kilometraje_v" type="text" placeholder="<?php echo $kilometraje; ?>"/>
               </div>
               <div class="col-third">
-                <input type="text" placeholder="<?php echo $kilometraje; ?>"/>
-              </div>
-              <div class="col-third">
-                <input type="text" placeholder="<?php echo $placa; ?>"/>
+                <input type="text" readonly placeholder="<?php echo $placa; ?>"/>
               </div>
             </div>
          </div>
@@ -117,11 +119,14 @@ include("../conexion/conexion.php");
           <div class="input-group"></div>
         </div>
         </div>
-      </form>
+      
       </div>
       </br> 
-      <a href="viajespendientes.php"><button class="btn-1">Regresar</button></a>
-      <a href="#"><button class="btn-1">Enviar</button></a>
+      <a href="viajespendientes.php"><button type="button" class="btn-1">Regresar</button></a>
+        <input type="hidden" name="viaje_v" value="<?php echo $id_viaje1; ?>">
+        <input type="hidden" name="vehiculo_v" value="<?php echo $id_vehiculo; ?>">
+        <button type="submit" class="btn-1">Enviar</button>
+      </form>
     </div>
       <?php
       }

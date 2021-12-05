@@ -11,11 +11,11 @@
 /*IMPORTACIÓN DE LAS LETRAS*/
 @font-face{
 	font-family: "Signika-Bold";
-	src: url("font/Signika-Bold.ttf") format("truetype");
+	src: url("../fuentes/Signika-Bold.ttf") format("truetype");
   }
   @font-face{
 	font-family: "Signika-Regular";
-	src: url("font/Signika-Regular.ttf") format("truetype");
+	src: url("../fuentes/Signika-Regular.ttf") format("truetype");
   }
 
 * {
