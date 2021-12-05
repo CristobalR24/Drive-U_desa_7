@@ -50,15 +50,42 @@
   <img src="imagenes/Buses.jpg" alt="Slide 3" />
   <img src="imagenes/Camioneta.jpg" alt="Slide 2"  />
   <img src="imagenes/Gira.jpg" alt="Slide 1" />
- 
-</div>
+  </div>
+
    <br>
 
     <div class="contenedor_noticias">
-       <div class="noticias"> </div>
-       <div class="noticias"> </div>
-       <div class="noticias"> </div>
-       <div class="noticias"> </div>
+       <div class="noticias"> 
+         <img src="imagenes/Buses_colon.jpg" class="imagenes"  />
+         <a href="https://utp.ac.pa/autoridades-de-la-utp-entregan-autobus-al-centro-regional-de-colon" class="titulos_noticias"> Autoridades de la UTP entregan autobús al Centro Regional de Colón </a> 
+         <p> Con una inversión de más de 160 mil dólares, la Universidad Tecnológica 
+             de Panamá (UTP), adquirió un autobús de 44 pasajeros, para el Centro 
+             Regional de Colón. <a href="https://utp.ac.pa/autoridades-de-la-utp-entregan-autobus-al-centro-regional-de-colon" class="titulos_noticias">Ver más</a> </p> 
+       </div>
+
+       <div class="noticias"> 
+         <img src="imagenes/Buses_noche.jpg" class="imagenes"  />
+         <a href="https://utp.ac.pa/estudiantes-de-la-utp-cuentan-con-buses-para-su-traslado-durante-horas-nocturnas" class="titulos_noticias"> Estudiantes de la UTP cuentan con buses para su traslado durante horas nocturnas </a> 
+         <p> Estudiantes del turno nocturno de la Universidad Tecnológica de Panamá (UTP), cuentan, desde el 19 de marzo de 2018, con 
+             el servicio de autobuses para trasladarse, desde el Campus Central, Dr. Víctor Levi Sasso, a la Estación del Metro. <a href="https://utp.ac.pa/estudiantes-de-la-utp-cuentan-con-buses-para-su-traslado-durante-horas-nocturnas" class="titulos_noticias">Ver más</a></p>
+       </div>
+
+       <div class="noticias"> 
+         <img src="imagenes/Buses_chiriqui.jpg" class="imagenes"  />
+         <a href="https://utp.ac.pa/utp-chiriqui-cuenta-con-un-nuevo-autobus" class="titulos_noticias"> UTP Chiriquí cuenta con un nuevo autobús </a> 
+         <p> Las giras académicas, culturales y deportivas del Centro Regional de la Universidad Tecnológica de 
+             Panamá (UTP), en Chiriquí, se podrán realizar con mayor efectividad, ya que cuenta con un nuevo autobús 
+             que formará parte de su flota vehicular. 
+             <a href="https://utp.ac.pa/utp-chiriqui-cuenta-con-un-nuevo-autobus" class="titulos_noticias">Ver más</a> </p>
+       </div>
+
+       <div class="noticias"> 
+         <img src="imagenes/Buses_cocle.jpg" class="imagenes" />
+         <a href="https://utp.ac.pa/rector-entrega-autobus-al-centro-regional-de-cocle" class="titulos_noticias"> Rector entrega autobús al Centro Regional de Coclé </a> 
+         <p>En presencias de estudiante, docentes y administrativos, el Rector de la Universidad Tecnológica de Panamá 
+            (UTP), Ing. Héctor M. Montemayor Á., realizó la entrega de un autobús al Centro Regional de Coclé.
+            <a href="https://utp.ac.pa/rector-entrega-autobus-al-centro-regional-de-cocle" class="titulos_noticias">Ver más</a> </p>
+       </div>
     </div>
 
    <BR><BR><br>

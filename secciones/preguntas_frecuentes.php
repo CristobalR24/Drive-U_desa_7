@@ -13,7 +13,8 @@
     <span class="utp">Universidad Tecnológica de Panamá</span>
   </div> 
 
-   <span class="titulo">Drive-U</span></header>
+   <span class="titulo">Drive-U</span>
+  </header>
    
    <nav>
     <ul>
@@ -45,43 +46,70 @@
 			<li class="derecha"><a href="login.php">Iniciar sesión <span class="material-icons pequeno">home</span> </a></li>	
   	</ul>
    </nav>
+
    <BR>
 
-    <p><h2>Inicio > Preguntas frecuentes</h2></p> <BR>
+    <h2>Inicio > Preguntas frecuentes</h2><BR>
 
-    <div>
-    <section id="menu1">
-      <a href="#menu1">Pregunta 1</a>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, aspernatur delectus soluta quibusdam et voluptatum, laborum perspiciatis natus nostrum alias quos cupiditate, necessitatibus autem ex. Animi fugiat veritatis dignissimos commodi?</p>
-    </section>
+      <div id="preguntas">
+      <ul>
+        <li>
+          <input type="checkbox" checked>
+          <h2>¿Cómo se hace un proceso de solicitud?</h2>
+          <p>Para realizar una solicitud lo primero es llamar al número 270-6841, llenar los datos que se requieren de la solicitud por parte 
+            del colaborador, y esperar a que se le envíe correo de para su aprobación. </p>
+        </li>
 
-    <section id="menu2">
-      <a href="#menu2">Pregunta 2</a>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, aspernatur delectus soluta quibusdam et voluptatum, laborum perspiciatis natus nostrum alias quos cupiditate, necessitatibus autem ex. Animi fugiat veritatis dignissimos commodi?</p>
-    </section>
+        <li>
+          <input type="checkbox" checked>
+          <h2>¿Cuándo se requiere un salvo conducto?</h2>
+          <p>Se solicita cuando se requiera utilizar un vehículo de la universidad 
+            fuera de la hora laboral.</p>
+        </li>
 
-    <section id="menu3">
-      <a href="#menu3">Pregunta 3</a>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, aspernatur delectus soluta quibusdam et voluptatum, laborum perspiciatis natus nostrum alias quos cupiditate, necessitatibus autem ex. Animi fugiat veritatis dignissimos commodi?</p>
-    </section>
+        <li>
+          <input type="checkbox" checked>
+          <h2>¿Qué tipos de vehículos cuenta la universidad?</h2>
+          <p> Contamos con vehículos como: sedanes, buses, costers, camionetas. </p>
+        </li>
 
-    <section id="menu4">
-      <a href="#menu4">Pregunta 4</a>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. A, aspernatur delectus soluta quibusdam et voluptatum, laborum perspiciatis natus nostrum alias quos cupiditate, necessitatibus autem ex. Animi fugiat veritatis dignissimos commodi?</p>
-    </section>
+        <li>
+          <input type="checkbox" checked>
+          <h2>¿Cuál es su horario de atención?</h2>
+          <p> De lunes a sábados de 7:00 a.m - 3:00 p.m.</p>
+        </li>
+        
+        <li>
+          <input type="checkbox" checked>
+          <h2>¿Qué cada tiempo se le hace mantenimiento a los vehículos de la universidad?</h2>
+          <p> Se le hacen cada 5,000 km de distancia.</p>
+        </li>
+
+        <li>
+          <input type="checkbox" checked>
+          <h2>¿Por qué una solicitud es rechazada? </h2>
+          <p> Existen varias razones, los cuales pueden ser: mantenimiento del vehículo, reservaciones llenas, solicitudes fuera del horario 
+              laboral, vehículo fuera de servicio temporalmente, entre otros que serán mencionados por el colaborador al momento de
+              ingresar los datos al sistema. </p>
+        </li>
+
+        <li>
+          <input type="checkbox" checked>
+          <h2>¿Cuáles son los centros regionales a los que pueden llegar los vehículos de la universidad?</h2>
+          <p> Están: Azuero, Bocas del Toro, Chiriquí, Coclé, Colón, Panamá Oeste, Veraguas. </p>
+        </li>
+
+        <li>
+          <input type="checkbox" checked>
+          <h2>¿Cuál es el número telefónico en caso de emergencias?</h2>
+          <p>  Ante cualquier emergencia, primero debes notificar a las autoridades al 911 e inmediatamente después 
+               comunicarte con la universidad llamando al 270-6841, para dar los datos de la ubicación del incidente. </p>
+        </li>
+      </ul>
     </div>
 
-   <BR><BR>
-   <BR><BR>
-   <BR><BR>
-
-   <br>
-   <br>
-   <br>
-   		
-   <BR><BR><BR><BR><BR><BR>		
-   <BR><BR><BR><BR><BR><BR>		
-   <BR><BR><BR>
+   <BR><BR><BR><BR>
+   
    <footer>
      <br>
 	 ©2021. Drive-U.
