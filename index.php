@@ -69,7 +69,7 @@ if(isset($_SESSION['sw'])){
           <a href="secciones/login.php">Iniciar sesión <span class="material-icons pequeno">home</span></a>
         <?php }
         else{ ?>
-          <a href="procesos/cerrarSesion.php">Cerrar sesión <span class="material-icons pequeno">home</span></a>
+          <a href="procesos/cerrarSesion.php">Cerrar sesión <span class="material-icons pequeno">logout</span></a>
        <?php } ?>
       </li>	
   	</ul>
