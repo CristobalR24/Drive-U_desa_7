@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(isset($_SESSION['sw'])){
+  include("../procesos/consultarUser.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,33 +25,51 @@
   </header>
    
    <nav>
-    <ul>
+   <ul>
 		  <li><a href="../index.php">Inicio</a></li>
       <li><a href="preguntas_frecuentes.php">Preguntas frecuentes</a></li>
-			<li><a href="#">Servicios</a>
-        <div class="submenu">
-          <ul><a href="crear_solicitud.php">Crear solicitud</a></ul>
-          <ul><a href="estado_solicitud.php">Estado de solicitud</a></ul>
-        </div>
-      </li>
 
-      <li><a href="#">Opciones de administrador</a>
-        <div class="submenu">
-          <ul><a href="crear_usuario.php">Registrar usuario</a></ul>
-          <ul><a href="actualizar_elim_usuario.php">Modificar usuarios</a></ul>
-          <ul><a href="estado_vehiculos.php">Lista de vehiculos</a></ul>
-          <ul><a href="aceptar_solicitud.php">Procesar solicitudes</a></ul>
-        </div>
-      </li>
+      <?php if(isset($_SESSION['sw'])) 
+              if($datos_usuario->tipo==1){?>
+        <li><a href="#">Servicios</a>
+          <div class="submenu">
+            <ul><a href="crear_solicitud.php">Crear solicitud</a></ul>
+            <ul><a href="estado_solicitud.php">Estado de solicitud</a></ul>
+          </div>
+        </li>
+      <?php } ?>
 
+      <?php if(isset($_SESSION['sw']))
+              if($datos_usuario->tipo==2){?>
+        <li><a href="#">Opciones de administrador</a>
+          <div class="submenu">
+            <ul><a href="crear_usuario.php">Registrar usuario</a></ul>
+            <ul><a href="actualizar_elim_usuario.php">Modificar usuarios</a></ul>
+            <ul><a href="estado_vehiculos.php">Lista de vehiculos</a></ul>
+            <ul><a href="aceptar_solicitud.php">Procesar solicitudes</a></ul>
+          </div>
+        </li>
+      <?php } ?>
+
+      <?php if(isset($_SESSION['sw'])) 
+              if($datos_usuario->tipo==3){?>
       <li><a href="#">Opciones de conductor</a>
         <div class="submenu">
           <ul><a href="viajespendientes.php">Viajes pendientes</a></ul>
           <ul><a href="viajesRealizados.php">Viajes realizados</a></ul>
         </div>
       </li>
+      <?php } ?>
+			
       <!-- tambien sera opcion de salir --> 
-			<li class="derecha"><a href="login.php">Iniciar sesión <span class="material-icons pequeno">home</span> </a></li>	
+			<li class="derecha">
+        <?php if(!isset($_SESSION['sw'])) { ?>
+          <a href="login.php">Iniciar sesión <span class="material-icons pequeno">home</span></a>
+        <?php }
+        else{ ?>
+          <a href="../procesos/cerrarSesion.php">Cerrar sesión <span class="material-icons pequeno">home</span></a>
+       <?php } ?>
+      </li>	
   	</ul>
    </nav>
 

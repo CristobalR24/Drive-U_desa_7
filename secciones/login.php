@@ -24,12 +24,12 @@
    <BR><BR>
    
   
-     <form>
+     <form action="../procesos/procesar_login.php" method="POST">
       <fieldset>
          <h1>Inicio de sesión</h1>
          
          <BR>
-         Correo: <input type="text" name=correo required placeholder="direccion@email.com">
+         Correo: <input type="email" name=correo required placeholder="direccion@email.com">
          <BR>
          Contraseña: <input type="password" name=password required placeholder="*********">
 

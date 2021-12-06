@@ -1,3 +1,15 @@
+<?php
+session_start();
+if(isset($_SESSION['sw'])){
+  //include("procesos/consultarUser.php");
+  include("conexion/conexion.php");
+    $id_usuario=$_SESSION['id'];
+    $resultado=$con->query("SELECT * FROM usuarios WHERE id_usuario='$id_usuario'");
+    $datos_usuario=$resultado->fetch(PDO::FETCH_OBJ);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,31 +30,48 @@
     <ul>
 		  <li><a href="index.php">Inicio</a></li>
       <li><a href="secciones/preguntas_frecuentes.php">Preguntas frecuentes</a></li>
-			<li><a href="#">Servicios</a>
-        <div class="submenu">
-          <ul><a href="secciones/crear_solicitud.php">Crear solicitud</a></ul>
-          <ul><a href="secciones/estado_solicitud.php">Estado de solicitud</a></ul>
-        </div>
-      </li>
 
-      <li><a href="#">Opciones de administrador</a>
-        <div class="submenu">
-          <ul><a href="secciones/crear_usuario.php">Registrar usuario</a></ul>
-          <ul><a href="secciones/actualizar_elim_usuario.php">Modificar usuarios</a></ul>
-          <ul><a href="secciones/estado_vehiculos.php">Lista de vehiculos</a></ul>
-          <ul><a href="secciones/aceptar_solicitud.php">Procesar solicitudes</a></ul>
-        </div>
-      </li>
+      <?php if(isset($_SESSION['sw'])) 
+              if($datos_usuario->tipo==1){?>
+        <li><a href="#">Servicios</a>
+          <div class="submenu">
+            <ul><a href="secciones/crear_solicitud.php">Crear solicitud</a></ul>
+            <ul><a href="secciones/estado_solicitud.php">Estado de solicitud</a></ul>
+          </div>
+        </li>
+      <?php } ?>
 
+      <?php if(isset($_SESSION['sw']))
+              if($datos_usuario->tipo==2){?>
+        <li><a href="#">Opciones de administrador</a>
+          <div class="submenu">
+            <ul><a href="secciones/crear_usuario.php">Registrar usuario</a></ul>
+            <ul><a href="secciones/actualizar_elim_usuario.php">Modificar usuarios</a></ul>
+            <ul><a href="secciones/estado_vehiculos.php">Lista de vehiculos</a></ul>
+            <ul><a href="secciones/aceptar_solicitud.php">Procesar solicitudes</a></ul>
+          </div>
+        </li>
+      <?php } ?>
+
+      <?php if(isset($_SESSION['sw'])) 
+              if($datos_usuario->tipo==3){?>
       <li><a href="#">Opciones de conductor</a>
         <div class="submenu">
           <ul><a href="secciones/viajespendientes.php">Viajes pendientes</a></ul>
           <ul><a href="secciones/viajesRealizados.php">Viajes realizados</a></ul>
         </div>
       </li>
+      <?php } ?>
 			
       <!-- tambien sera opcion de salir --> 
-			<li class="derecha"><a href="secciones/login.php">Iniciar sesión <span class="material-icons pequeno">home</span> </a></li>	
+			<li class="derecha">
+        <?php if(!isset($_SESSION['sw'])) { ?>
+          <a href="secciones/login.php">Iniciar sesión <span class="material-icons pequeno">home</span></a>
+        <?php }
+        else{ ?>
+          <a href="procesos/cerrarSesion.php">Cerrar sesión <span class="material-icons pequeno">home</span></a>
+       <?php } ?>
+      </li>	
   	</ul>
    </nav>
    <br><br>
