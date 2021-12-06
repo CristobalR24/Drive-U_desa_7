@@ -1,8 +1,14 @@
 <?php
-include('../conexion/conexion.php');
 $correo = $_POST['correo'];
 $cadena = 'Salvoconducto';
+
+
+include('../procesos/verificarSesion.php');
+if(isset($_SESSION['sw'])){
+  include("../procesos/consultarUser.php");
+}
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +30,7 @@ $versal = $con->query("SELECT * FROM salvoconducto WHERE correo_electronico='$co
 $salva = $versal->fetch(PDO::FETCH_OBJ);
 $verificar = $con->query("Select * from solicitud WHERE correo_electronico='$correo' and estado= 3 and razon like '%$cadena%'");
 $ver = $verificar->fetch(PDO::FETCH_OBJ);
-$resultado = $con->query("Select b.nombre,b.id_usuario,a.inicio_destino,b.cedula,a.cantidad_personas,a.modelo_vehiculo,a.correo_electronico,a.final_destino,a.telefono from solicitud a inner join usuarios b on b.id_usuario = a.id_usuario WHERE a.correo_electronico like'$correo' and a.razon like '%$cadena%' and a.id_usuario = 1");
+$resultado = $con->query("Select b.nombre,b.id_usuario,a.inicio_destino,b.cedula,a.cantidad_personas,a.modelo_vehiculo,a.correo_electronico,a.final_destino,a.telefono from solicitud a inner join usuarios b on b.id_usuario = a.id_usuario WHERE a.correo_electronico like'$correo' and a.razon like '%$cadena%' and a.id_usuario = $datos_usuario->id_usuario");
 if($ver == true){
     if($salva ==  false){
       while($datos_user=$resultado->fetch(PDO::FETCH_OBJ)){

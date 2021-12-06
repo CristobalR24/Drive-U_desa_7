@@ -2,6 +2,9 @@
 include('../procesos/verificarSesion.php');
 if(isset($_SESSION['sw'])){
   include("../procesos/consultarUser.php");
+
+  if($datos_usuario->tipo!=3) //solo chofer
+    header("location: ../index.php");
 }
 ?>
 

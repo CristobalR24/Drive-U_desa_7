@@ -2,6 +2,9 @@
 include('../procesos/verificarSesion.php');
 if(isset($_SESSION['sw'])){
   include("../procesos/consultarUser.php");
+
+  if($datos_usuario->tipo!=1) //solo colaborador
+    header("location: ../index.php");
 }
 ?>
 <!DOCTYPE html>

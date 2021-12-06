@@ -2,7 +2,13 @@
 include('../procesos/verificarSesion.php');
 if(isset($_SESSION['sw'])){
   include("../procesos/consultarUser.php");
+
+  if($datos_usuario->tipo!=2) //solo admin
+    header("location: ../index.php");
+  
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -6,22 +6,24 @@ class Solicitud{
     public $razon;
     public $telefono;
     public $diaviaje;
+    public $cantida_personas;
     public $correo_electronico;
-    public $tipo_vehiculo;
     public $id_vehiculo;
     public $final_destino;
 
-    function __construct($id_solicitante,$inicio_destino,$estado,$razon,$telefono,$diaviaje,$correo_electronico,$tipo_vehiculo,$id_vehiculo,$final_destino){
+
+    function __construct($id_solicitante,$inicio_destino,$estado,$razon,$telefono,$diaviaje ,$cantida_personas,$correo_electronico,$id_vehiculo,$final_destino){
         $this->id_solicitante = $id_solicitante;
         $this->inicio_destino = $inicio_destino;
         $this->estado = $estado;
         $this->razon = $razon;
         $this->telefono =$telefono;
+        $this->cantida_personas = $cantida_personas;
         $this->diaviaje = $diaviaje;
         $this->correo_electronico = $correo_electronico;
-        $this->tipo_vehiculo = $tipo_vehiculo;
         $this->id_vehiculo = $id_vehiculo;
         $this->final_destino = $final_destino;
     }
+   
 }
 ?>

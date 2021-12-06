@@ -28,7 +28,7 @@ require('../clases/solicitud.php');
         $telefono = $_POST['Telefono'];
         $modelo = $_POST['modelo'];
         $estado = 1;
-        $id = 1;
+        $id = $_POST['id_solicitante'];;
         $razon = " ";
     
     }

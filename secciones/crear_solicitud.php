@@ -2,6 +2,10 @@
 include('../procesos/verificarSesion.php');
 if(isset($_SESSION['sw'])){
   include("../procesos/consultarUser.php");
+
+  if($datos_usuario->tipo!=1) //solo colaborador
+    header("location: ../index.php");
+
 }
 
 $consultar = $con->query('Select * from modelo');
@@ -123,12 +127,15 @@ $consultar = $con->query('Select * from modelo');
       </div>
     </div>
     <br>
-    <div class="btn1">
-       <input class="enviar" type="submit" value="Enviar Solicitud" >
-     </div>
-     <div class="btn2">
-       <input  class ="cancelar" type="reset" name="Cancelar" value="Cancelar">
-     </div>
+    <input type="hidden" name="id_solicitante" value="<?php echo $datos_usuario->id_usuario;?>">
+    </div>
+    <div class="botones">
+      <div class="btn1">
+        <input class="enviar" type="submit" value="Enviar Solicitud" >
+      </div>
+      <div class="btn2">
+        <input  class ="cancelar" type="reset" name="Cancelar" value="Cancelar">
+      </div>
   </div>
       </fieldset>
      </form>

@@ -27,7 +27,7 @@ font-family: "Signika-Regular";
 font-size: 18px;
 background-color:#d3c0d3;
 border-radius:20px;
-width:720px;
+width:1000px;
 height:240px;
 }
 
@@ -74,15 +74,21 @@ height:240px;
  border-radius:20px;
  font-family:Century-Gothic;
 }
-.btn1{
-    float: left;
+
+.botones{
+    display: flex;
+    justify-content: center;
+    
+    gap: 10rem;
+    text-align: center;
+width: 100%;}
+
+.btn1{margin-right: 3rem;
    overflow: hidden;
-   width:50%
 }
 .btn2{
-    float:right;
-    width:50%;
-    overflow: hidden;
+    margin-right: 3rem;
+   overflow: hidden;
 }
 
 .cancelar{
