@@ -12,7 +12,7 @@
    <div class="logo"><img src="../imagenes/logo_utp.png" width="120px">
     <span class="utp">Universidad Tecnológica de Panamá</span>
   </div> 
-   <span class="titulo">Drive-U</span></header>
+   <span class="titulo">Drive-<span class="letra_u">U</span></span></header>
    
    <nav>
     <ul>
@@ -29,13 +29,14 @@
          <h1>Inicio de sesión</h1>
          
          <BR>
-         Correo: <input type="email" name=correo required placeholder="direccion@email.com">
+         <span class="sub">Correo: </span><input type="email" name=correo required placeholder="direccion@email.com">
          <BR>
-         Contraseña: <input type="password" name=password required placeholder="*********">
+         <span class="sub">Contraseña: </span><input type="password" name=password required placeholder="*********">
 
          <BR><BR>
          <button class="envio" type="submit">Acceder</button>
          <BR><BR>
+         
       </fieldset>
 
      </form>

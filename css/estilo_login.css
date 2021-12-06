@@ -1,35 +1,59 @@
+@font-face{
+    font-family: "Signika-Regular";
+    src: url("../fuentes/Signika-Regular.ttf") format("truetype");
+    }
+    
+@font-face{
+    font-family: "Century-Gothic";
+    src: url("../fuentes/Century-Gothic.ttf") format("truetype");
+}
+    
+
 form {
+    font-family: 'Signika-Regular';
     display: flex;
     justify-content:center;
     }
     
 form fieldset{
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    font-size: 14px;
+    letter-spacing: 2px;
+    font-family: 'Signika-Regular',"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 16px;
     width: 500px;
-    height: 300px;
+    height: fit-content;
     background-color:#4B2E83;
     Color: white;
+    border:none;
+    border-radius: 15px;
     padding-left:20px;
     padding-right:20px;
     text-align:center;
     }
+
+.sub{font-size: 1.2rem;}
     
 form fieldset h1{text-align:center;} 
     
 form fieldset input{ display: block;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-family: 'Signika-Regular',"Lucida Sans Unicode", "Lucida Grande", sans-serif;
     text-align:center;
     width: 100%;
+    font-size: 1.2rem;
     height: 25px;
     border:0;
     margin:0;
     }
     
-.envio{background-color: black;
+.envio{background-color: #007b91;
+       cursor: pointer;
+       border: none;
        color:white;
        font-weight:bold;
+       border-radius: 15px;
        width: 150px;
        height: 25px;}
 
-.rojo{color:red;}
+.envio:active{background-color: #013741;}
+
+.rojo{color:#ffffff; 
+      }
