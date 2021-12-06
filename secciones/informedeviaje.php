@@ -1,5 +1,9 @@
 <?php
-include("../conexion/conexion.php");
+include('../procesos/verificarSesion.php');
+
+if(isset($_SESSION['sw'])){
+  include("../procesos/consultarUser.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -10,6 +14,7 @@ include("../conexion/conexion.php");
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="../css/estilo_informedeviaje.css">
+  <link rel="stylesheet" type="text/css" href="../css/estilo.css"/>
 </head>
 <body>
   <header>
@@ -59,6 +64,7 @@ include("../conexion/conexion.php");
       <?php } ?>
 			
       <!-- tambien sera opcion de salir --> 
+      
 			<li class="derecha">
         <?php if(!isset($_SESSION['sw'])) { ?>
           <a href="login.php">Iniciar sesión <span class="material-icons pequeno">home</span></a>
@@ -67,6 +73,7 @@ include("../conexion/conexion.php");
           <a href="../procesos/cerrarSesion.php">Cerrar sesión <span class="material-icons pequeno">logout</span></a>
        <?php } ?>
       </li>	
+      
   	</ul>
    </nav>
   <br><br>

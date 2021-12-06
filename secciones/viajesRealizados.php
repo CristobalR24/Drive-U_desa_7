@@ -14,12 +14,19 @@ $consulta = $con->query('SELECT * FROM viajes WHERE id_chofer='.$datos_usuario->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <meta name="viewport" content="width=device-width"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="../css/estilo_ViajesRealizados.css">
+  <link rel="stylesheet" type="text/css" href="../css/estilo.css" />
 
 </head>
 <body>
   <header>
-    <div class="logo"><img src="../imagenes/logo_utp.png" width="120px"></div> 
-    <span class="titulo">Drive-U</span></header>
+    <div class="logo"><img src="../imagenes/logo_utp.png" width="120px">
+      <span class="utp">Universidad Tecnológica de Panamá</span>
+    </div>
+    <?php if(isset($_SESSION['sw'])) {?>
+      <div class="bienvenido">Bienvenido: <?php echo $datos_usuario->nombre?></div>
+    <?php } ?>
+    <span class="titulo">Drive-<span class="letra_u">U</span></span>
+  </header>
     
     <nav>
     <ul>
@@ -80,7 +87,9 @@ $consulta = $con->query('SELECT * FROM viajes WHERE id_chofer='.$datos_usuario->
 <ul class="surveys grid">
  
   <?php
-    while($i = $consulta->fetch(PDO::FETCH_OBJ)){ ?>
+    $j=0;
+    while($i = $consulta->fetch(PDO::FETCH_OBJ)){
+      $j++; ?>
      <a href="#"> 
       <li class="survey-item">
         <span class="survey-name"> ID Viaje: <?php echo $i->id_viaje; ?></span> <br>         
@@ -92,8 +101,13 @@ $consulta = $con->query('SELECT * FROM viajes WHERE id_chofer='.$datos_usuario->
         <span class="survey-name"> ID Chofer <?php echo $i->id_chofer; ?> </span><br>
         <span class="survey-name"> Estado: <?php echo $i->estado; ?> </span>  </div>
      </li>  
-    <?php  } ?>         
-    </a>
+    <?php  } 
+    if($j==0){?> 
+      <div class="nada">No hay nada que mostrar<div>
+      <img src="../imagenes/vacio.png" class="nada_icon">
+    <?php }
+    ?>         
+    
 
 </ul>
 <!-- partial -->

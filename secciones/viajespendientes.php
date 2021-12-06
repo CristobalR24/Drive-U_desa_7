@@ -78,12 +78,13 @@ if(isset($_SESSION['sw'])){
   	</ul>
    </nav>
 
-  <?php
+  <?php $i=0;
   if ($con){
     $consulta = $con->query("SELECT v.fecha, v.destino, v.estado, v.id_viaje, vh.marca FROM viajes v 
-    INNER JOIN vehiculos vh ON v.vehiculo = vh.id_vehiculo WHERE v.id_chofer=".$datos_usuario->id_usuario);
+    INNER JOIN vehiculos vh ON v.vehiculo = vh.id_vehiculo WHERE v.estado=1 AND v.id_chofer=".$datos_usuario->id_usuario);
 
     while ($row = $consulta->fetch()) {
+      $i++;
       $fecha = $row['fecha'];
       $destino = $row['destino'];
       $vehiculo = $row['marca'];
@@ -118,12 +119,18 @@ if(isset($_SESSION['sw'])){
       <?php
       }
     }
+    if($i==0){?> 
+      <BR><BR>
+      <div class="nada">No tiene viajes pendientes<div>
+      <img src="../imagenes/vacio.png" class="nada_icon">
+    <?php }      
+    
   }
   ?>
 
 
   
-  <BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+  <BR><BR><BR><BR>
   <footer>
     <br>
     ©2021. Drive-U.

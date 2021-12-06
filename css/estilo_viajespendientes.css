@@ -323,3 +323,12 @@
   opacity: 1;
   transition: all 0.5s;
 }
+
+.nada{text-align: center;
+  padding-top: 2rem;
+  height: 25rem;
+  background-color: #ffffff;
+  font-size: 3rem;
+}
+
+.nada_icon{width: 20%;}
