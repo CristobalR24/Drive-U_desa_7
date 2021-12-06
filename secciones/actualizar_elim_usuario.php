@@ -16,11 +16,15 @@ if(isset($_SESSION['sw'])){
   <script  type="text/javascript" src="../js/funcion_actualizar.js"> </script>
 </head>
 <body>
-   <header>
-   <div class="logo"><img src="../imagenes/logo_utp.png" width="120px">
-    <span class="utp">Universidad Tecnológica de Panamá</span>
-  </div> 
-   <span class="titulo">Drive-U</span></header>
+  <header>
+    <div class="logo"><img src="../imagenes/logo_utp.png" width="120px">
+      <span class="utp">Universidad Tecnológica de Panamá</span>
+    </div>
+    <?php if(isset($_SESSION['sw'])) {?>
+      <div class="bienvenido">Bienvenido: <?php echo $datos_usuario->nombre?></div>
+    <?php } ?>
+    <span class="titulo">Drive-<span class="letra_u">U</span></span>
+  </header>
    <nav>
    <ul>
 		  <li><a href="../index.php">Inicio</a></li>

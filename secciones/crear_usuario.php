@@ -18,10 +18,11 @@ if(isset($_SESSION['sw'])){
 <body>
 
    <header>
-   <div class="logo"><img src="../imagenes/logo_utp.png" width="120px">
-    <span class="utp">Universidad Tecnológica de Panamá</span>
-  </div> 
-   <span class="titulo">Drive-U</span></header>
+    <div class="logo"><img src="../imagenes/logo_utp.png" width="120px">
+      <span class="utp">Universidad Tecnológica de Panamá</span>
+    </div> 
+    <span class="titulo">Drive-<span class="letra_u">U</span></span>
+  </header>
 
    <nav>
    <ul>
@@ -114,7 +115,7 @@ if(isset($_SESSION['sw'])){
                    <span class="texto">Email</span>
                    <br>
                  <input id="email" class="estilo" type="email" placeholder="Email" required name="email">
-                    <br>
+                    <br><br>
                    <span class="texto">Contraseña</span>
                    <br>
                  <input id="pass1" class="estilo" type="password" placeholder="Contraseña" maxlength="18" required onkeyup="validar_pass();"  >
@@ -133,17 +134,21 @@ if(isset($_SESSION['sw'])){
 
                   <?php
                       include('../procesos/proceso_registro_usuario.php');
+                      
                       $reg = new registrar_usuario();
                         if(isset($_POST['envio']))
                         {
                           try
                           {
-                            $registro= $reg->registrar();
-                                  
+                            
+                            if($reg->existe_cedula($_POST['cedula'],$con)){
+                              echo "<br><br><span class='mensaje error'>¡esta cedula ya existe!</span>";}
+                            else {
+                              $registro= $reg->registrar($con);}
                           }
-                          catch(PDOExceptio $ex)
+                          catch(PDOException $ex)
                           {
-                  
+        
                           }
                         }
 

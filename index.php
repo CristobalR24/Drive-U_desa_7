@@ -24,7 +24,11 @@ if(isset($_SESSION['sw'])){
    <div class="logo"><img src="imagenes/logo_utp.png" width="120px">
     <span class="utp">Universidad Tecnológica de Panamá</span>
   </div> 
-   <span class="titulo">Drive-U</span></header>
+    <?php if(isset($_SESSION['sw'])) {?>
+      <div class="bienvenido">Bienvenido: <?php echo $datos_usuario->nombre?></div>
+    <?php } ?>
+   <span class="titulo">Drive-<span class="letra_u">U</span></span>
+  </header>
    
    <nav>
     <ul>

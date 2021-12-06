@@ -15,13 +15,17 @@ if(isset($_SESSION['sw'])){
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="../css/estilo_viajespendientes.css">
+  <link rel="stylesheet" type="text/css" href="../css/estilo.css" />
 </head>
 <body>
   <header>
     <div class="logo"><img src="../imagenes/logo_utp.png" width="120px">
       <span class="utp">Universidad Tecnológica de Panamá</span>
     </div>
-    <span class="titulo">Drive-U</span>
+    <?php if(isset($_SESSION['sw'])) {?>
+      <div class="bienvenido">Bienvenido: <?php echo $datos_usuario->nombre?></div>
+    <?php } ?>
+    <span class="titulo">Drive-<span class="letra_u">U</span></span>
   </header>
   <nav>
   <ul>
@@ -61,6 +65,7 @@ if(isset($_SESSION['sw'])){
       <?php } ?>
 			
       <!-- tambien sera opcion de salir --> 
+      
 			<li class="derecha">
         <?php if(!isset($_SESSION['sw'])) { ?>
           <a href="login.php">Iniciar sesión <span class="material-icons pequeno">home</span></a>
@@ -69,13 +74,14 @@ if(isset($_SESSION['sw'])){
           <a href="../procesos/cerrarSesion.php">Cerrar sesión <span class="material-icons pequeno">logout</span></a>
        <?php } ?>
       </li>	
+      
   	</ul>
    </nav>
 
   <?php
   if ($con){
     $consulta = $con->query("SELECT v.fecha, v.destino, v.estado, v.id_viaje, vh.marca FROM viajes v 
-    INNER JOIN vehiculos vh ON v.vehiculo = vh.id_vehiculo ");
+    INNER JOIN vehiculos vh ON v.vehiculo = vh.id_vehiculo WHERE v.id_chofer=".$datos_usuario->id_usuario);
 
     while ($row = $consulta->fetch()) {
       $fecha = $row['fecha'];

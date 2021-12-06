@@ -39,14 +39,14 @@
 .texto
 {
     font-family: "Signika-Regular";
-    font-size: 1.7em;
+    font-size: 1.5em;
     font-weight: bold;
 }
 
 .titulo_h1
 {
     font-family: "Signika-Regular";
-    font-size: 2.5em;
+    font-size: 2em;
     
 }
 
@@ -111,6 +111,10 @@
 background-color: white;
 }
 
+.mensaje{font-size: 1.4rem;
+         font-family: 'Signika-Regular';}
+.error{color: #da2626;}
+.normal{color: #008a12;}
 
 
 
