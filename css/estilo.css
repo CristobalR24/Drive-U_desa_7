@@ -105,7 +105,7 @@ nav li a:hover{
 
 nav ul li:hover .submenu{display:block;
 						 position:absolute;				    
-                         z-index: 2;  /* <- envia el elemento adelante */
+                         z-index: 3;  /* <- envia el elemento adelante */
                          margin-top:0px;
                          }
 
