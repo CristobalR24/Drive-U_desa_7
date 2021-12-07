@@ -139,6 +139,8 @@ ul{list-style: none;}
 .mensaje{font-size: 1.4rem;}
 .error{color: #da2626;}
 .normal{color: #008a12;}
+.anormal{color: #666409;}
+
 
 .titulo_modal{color:#4B2E83;
               font-size: 1.5rem;

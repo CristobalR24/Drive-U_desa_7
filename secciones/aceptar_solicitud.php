@@ -232,9 +232,12 @@ if(isset($_SESSION['sw'])){
               <?php } ?>
 
               <?php if(isset($_GET["msg"])){
-                if($_GET["msg"]!="Solicitud rechazada"){?>
-                  <span class="mensaje normal"><?php echo $_GET["msg"];?></span>
-              <?php } else{ ?>
+                if($_GET["msg"]!="Solicitud rechazada"){
+                    if($_GET["msg"]=="Solicitud aprobada"){ ?>
+                      <span class="mensaje normal"><?php echo $_GET["msg"];?></span>
+              <?php } else { ?>
+                      <span class="mensaje anormal"><?php echo $_GET["msg"];?></span>
+              <?php }  }else{ ?>
                   <span class="mensaje error"><?php echo $_GET["msg"];?></span>
                 <?php } } ?>
               </div>

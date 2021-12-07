@@ -11,11 +11,14 @@ require('../clases/solicitud.php');
 <link rel="stylesheet" type="text/css" href="../css/estilo.css" />
 <link rel="stylesheet" type="text/css" href="../css/estilo_tabla_solicitud.css" />
 </head>
+<link rel="stylesheet" type="text/css" href="../css/estilo_crearsoli.css"/>
+<link rel="stylesheet" type="text/css" href="../css/estilo.css" />
 <header>
    <div class="logo"><img src="../imagenes/logo_utp.png" width="120px">
     <span class="utp">Universidad Tecnológica de Panamá</span>
   </div> 
-   <span class="titulo">Drive-U</span></header>
+    <span class="titulo">Drive-<span class="letra_u">U</span></span>
+    <nav></nav>
 <body>
     <?php
     if(!empty($_POST))
@@ -68,6 +71,10 @@ require('../clases/solicitud.php');
   <?php } ?>
          <div class="centrear">
          <H1> <?php echo ("Solicitud procesada con exito"); ?> <H1>
+           <br><br>
+         <HI><strong>Por favor, guarde su numero de solicitud: <?php echo $id;?></strong></H1>
+          <br><br>
+         <a href="../secciones/crear_solicitud.php"><button class="regresar">Regresar</button></a>
          </div>
     <?php }catch(PDOException $e){
         ?>

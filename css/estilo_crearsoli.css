@@ -123,3 +123,20 @@ width: 100%;}
 .two-col label {
     display: block;
 }
+
+.regresar{text-decoration: none;
+          font-family: 'Signika-Bold';
+          font-size: 1.4rem;  
+          cursor: pointer;
+          border: solid 1px #000000 ;
+          padding: 0.7rem;
+          border-radius: 15px;       
+          width: 20%;
+          background-color: #f08349;}
+.regresar:hover{
+background-color: #f3a175;
+}
+.regresar:active{
+background-color: #863002;
+}
+          
