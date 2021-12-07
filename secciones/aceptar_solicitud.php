@@ -228,7 +228,7 @@ if(isset($_SESSION['sw'])){
               <div class="area_boton">
               <?php if(isset($_GET["id"])){?>
 
-                  <button value="btnRechazo" id="btnRechazo" class="boton rechazar">Rechazar</button><button value="btnApruebo" id="btnApruebo" class="boton aceptar">Aceptar</button>
+                  <button value="btnRechazo" id="btnRechazo" class="boton rechazar">Rechazar</button><button value="btnApruebo" id="btnApruebo" class="boton aceptar">Evaluar</button>
               <?php } ?>
 
               <?php if(isset($_GET["msg"])){

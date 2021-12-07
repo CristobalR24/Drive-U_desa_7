@@ -103,12 +103,12 @@ $consultar = $con->query('Select * from modelo');
       </div>
       <div class="col2">
         <label for="field2">Inicio Destino</label>
-        <input type="text" name="Destino" required pattern="[A-Za-z]{1,60}"> 
+        <input type="text" name="Destino" required> 
         </div>
         
         <div class="col3">
     <label for="field2">Final del Destino</label>
-    <input type="text" name="Final" required required pattern="[A-Za-z]{1,60}"> 
+    <input type="text" name="Final" required required> 
       </div>
        <div class="col3">
        <label for="fiedl1">Cantidad de personas</label>
