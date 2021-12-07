@@ -36,6 +36,10 @@
          <BR><BR>
          <button class="envio" type="submit">Acceder</button>
          <BR><BR>
+
+         <?php if(isset($_GET['msg'])) { ?>
+            <?php echo $_GET['msg'];?>
+         <?php } ?>
          
       </fieldset>
 
